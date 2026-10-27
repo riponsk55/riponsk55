@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta -->
+  <title>Md Ripon Shaikh | Telecom Engineer & IT/Web Professional</title>
+  <meta name="description" content="Portfolio of Md Ripon Shaikh – Telecommunication Engineer, IT professional, web developer and eCommerce creator. Experienced in telecom power, ISP support, and modern web development.">
+  <meta name="keywords" content="Md Ripon Shaikh, Telecom Engineer, IT Developer, Web Developer, eCommerce, Blogger, Tailwind, Bangladesh">
+  <meta property="og:title" content="Md Ripon Shaikh | Telecom & IT Professional">
+  <meta property="og:description" content="Building reliable telecom infrastructure and modern digital experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://placehold.co/1200x630/0A1A2F/008BF5?text=Md+Ripon+Shaikh">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Md Ripon Shaikh | Telecom & IT Professional">
+  <meta name="twitter:description" content="Telecom infrastructure, ISP support, web development & eCommerce solutions.">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md Ripon Shaikh",
+    "jobTitle": "Telecommunication Engineer & IT/Web Professional",
+    "telephone": "+8801949229055",
+    "email": "raphaelripon@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "408/04, Ranjitpur, Khanpur",
+      "addressLocality": "Bagerhat Sadar",
+      "addressRegion": "Khulna",
+      "addressCountry": "Bangladesh"
+    },
+    "url": "https://www.linkedin.com/in/riponsk55/"
+  }
+  </script>
+  <!-- Google Fonts: Hind Siliguri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN (pinned to stable release) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Canonical & social URL -->
+  <link rel="canonical" href="https://riponsk55.blogspot.com/">
+  <meta property="og:url" content="https://riponsk55.blogspot.com/">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co.com/zVh3BqCc/Profile-Picture-2026.jpg">
+  <style>
+    /* Custom CSS & animations */
+    * { font-family: 'Hind Siliguri', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0A1A2F;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
+    /* Glassmorphism card */
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    /* Glow */
+    .glow-text {
+      text-shadow: 0 0 12px rgba(0, 139, 245, 0.6), 0 0 30px rgba(0, 139, 245, 0.3);
+    }
+    .glow-border {
+      box-shadow: 0 0 15px rgba(0, 139, 245, 0.3);
+    }
+    /* Gradient background */
+    .gradient-bg {
+      background: radial-gradient(circle at 20% 30%, #0A1A2F 0%, #0F2642 50%, #0A1A2F 100%);
+    }
+    /* Particles canvas */
+    #particles-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    /* Hero content z-index */
+    .hero-content { position: relative; z-index: 2; }
+    /* Floating icons */
+    .float-icon {
+      position: absolute;
+      color: #008BF5;
+      opacity: 0.15;
+      font-size: 2.5rem;
+      animation: float 8s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(8deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    /* Smooth reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 2.5rem;
+      border-left: 2px solid #008BF5;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.6rem;
+      top: 0.3rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      background: #008BF5;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #008BF5;
+    }
+    /* Image hover scroll effect */
+    .project-image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      height: 200px;
+      background: #0F2642;
+    }
+    .project-image-container img {
+      width: 100%;
+      display: block;
+      transition: transform 1.2s ease;
+      object-fit: cover;
+      object-position: top;
+    }
+    .project-image-container:hover img {
+      transform: translateY(-50%) scale(1.05);
+    }
+    .project-image-container .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 40, 0.7);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+    .project-image-container:hover .overlay {
+      opacity: 1;
+    }
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #008BF5, #00A3FF);
+      color: #fff;
+      padding: 0.75rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 139, 245, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 139, 245, 0.7);
+    }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.75rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #008BF5;
+    }
+    /* Skill progress bar */
+    .skill-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #008BF5, #00C6FF);
+      width: 0;
+      border-radius: 10px;
+      transition: width 1.5s ease-in-out;
+    }
+    /* Counter */
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #008BF5;
+      line-height: 1.2;
+    }
+    /* Navbar */
+    .navbar {
+      backdrop-filter: blur(15px);
+      background: rgba(10, 26, 47, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: #008BF5;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link:hover { color: #008BF5; }
+    /* Active scrollspy link */
+    .nav-link.active,
+    .mobile-link.active {
+      color: #008BF5;
+    }
+    .nav-link.active::after {
+      width: 100%;
+    }
+    /* Back to top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #008BF5, #00A3FF);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(0, 139, 245, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 9998;
+    }
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    #backToTop:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 139, 245, 0.7);
+    }
+    /* Honeypot field – hidden from real users, traps bots */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    /* Mobile menu */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    .success-toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #10B981;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
+      transform: translateY(120%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+      z-index: 9999;
+    }
+    .success-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    /* Typing cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      background: #008BF5;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+      height: 1.2em;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    /* Profile image */
+    .profile-img {
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(0, 139, 245, 0.5);
+      box-shadow: 0 0 40px rgba(0, 139, 245, 0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 60px rgba(0, 139, 245, 0.8);
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .stat-number { font-size: 2rem; }
+    }
+  </style>
+<link rel="me" href="https://www.blogger.com/profile/17563954591986888580" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+<body class="gradient-bg">
+
+  <!-- Success Toast -->
+  <div id="successToast" class="success-toast">
+    <i class="fas fa-check-circle mr-2"></i> Message sent successfully!
+  </div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar fixed top-0 left-0 w-full z-50 py-3 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-white tracking-tight">
+        <span class="text-[#008BF5]">Md Ripon</span> Shaikh
+      </a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" data-section="home" class="nav-link text-white/80 text-sm font-medium">Home</a>
+        <a href="#about" data-section="about" class="nav-link text-white/80 text-sm font-medium">About</a>
+        <a href="#experience" data-section="experience" class="nav-link text-white/80 text-sm font-medium">Experience</a>
+        <a href="#skills" data-section="skills" class="nav-link text-white/80 text-sm font-medium">Skills</a>
+        <a href="#services" data-section="services" class="nav-link text-white/80 text-sm font-medium">Services</a>
+        <a href="#projects" data-section="projects" class="nav-link text-white/80 text-sm font-medium">Projects</a>
+        <a href="#contact" data-section="contact" class="nav-link text-white/80 text-sm font-medium">Contact</a>
+      </div>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-[#0A1A2F]/95 backdrop-blur-lg mt-2 rounded-2xl border border-white/10">
+      <div class="flex flex-col p-5 space-y-4">
+        <a href="#home" data-section="home" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Home</a>
+        <a href="#about" data-section="about" class="mobile-link text-white/90 hover:text-[#008BF5] transition">About</a>
+        <a href="#experience" data-section="experience" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Experience</a>
+        <a href="#skills" data-section="skills" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Skills</a>
+        <a href="#services" data-section="services" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Services</a>
+        <a href="#projects" data-section="projects" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Projects</a>
+        <a href="#contact" data-section="contact" class="mobile-link text-white/90 hover:text-[#008BF5] transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    <!-- Floating tech icons -->
+    <i class="fas fa-satellite-dish float-icon" style="top: 15%; left: 8%; animation-delay: 0s;"></i>
+    <i class="fas fa-network-wired float-icon" style="top: 25%; right: 10%; animation-delay: 1.5s; font-size: 3rem;"></i>
+    <i class="fas fa-microchip float-icon" style="bottom: 20%; left: 12%; animation-delay: 3s;"></i>
+    <i class="fas fa-code float-icon" style="bottom: 30%; right: 15%; animation-delay: 2s;"></i>
+    <i class="fas fa-wifi float-icon" style="top: 50%; left: 5%; animation-delay: 4s;"></i>
+    <i class="fas fa-server float-icon" style="top: 60%; right: 8%; animation-delay: 1s; font-size: 3rem;"></i>
+
+    <div class="hero-content max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left text -->
+      <div class="text-center md:text-left">
+        <p class="text-[#008BF5] font-semibold tracking-widest uppercase text-sm mb-3 reveal">Telecom & IT Professional</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight reveal">
+          Md Ripon <span class="text-[#008BF5] glow-text">Shaikh</span>
+        </h1>
+        <div class="text-xl sm:text-2xl text-white/80 mt-3 font-medium reveal">
+          <span id="typing-text"></span><span class="typing-cursor"></span>
+        </div>
+        <p class="text-white/60 mt-6 max-w-lg text-base leading-relaxed reveal">
+          Building reliable telecom infrastructure, solving technical challenges, and creating modern digital experiences.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center md:justify-start reveal">
+          <a href="#experience" class="btn-primary inline-flex items-center gap-2">
+            <i class="fas fa-briefcase"></i> View My Experience
+          </a>
+          <a href="#contact" class="btn-outline inline-flex items-center gap-2">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </a>
+          <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 border-[#008BF5]/40">
+            <i class="fab fa-linkedin-in text-[#008BF5]"></i> LinkedIn
+          </a>
+          <a id="resumeDownloadBtn" href="YOUR_RESUME_PDF_URL" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 border-[#008BF5]/40">
+            <i class="fas fa-file-arrow-down text-[#008BF5]"></i> Download CV
+          </a>
+        </div>
+      </div>
+      <!-- Right profile image -->
+      <div class="flex justify-center reveal">
+        <div class="relative">
+          <img id="profileImageDisplay" src="" alt="Md Ripon Shaikh" class="profile-img w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+          <div class="absolute -bottom-2 -right-2 bg-[#008BF5] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg glow-border">
+            <i class="fas fa-check-circle mr-1"></i> Telecom & IT
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">About <span class="text-[#008BF5]">Me</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="glass p-8 reveal">
+        <p class="text-white/80 leading-relaxed mb-4">
+          I am a technical professional with hands-on experience in the <span class="text-[#008BF5] font-medium">Telecommunication Technical Department</span>, 
+          <span class="text-[#008BF5] font-medium">Telecom Power/Infrastructure Support</span>, and the <span class="text-[#008BF5] font-medium">Telecommunication IT Sector</span>.
+        </p>
+        <p class="text-white/80 leading-relaxed mb-4">
+          My field expertise includes NTTN, ISP & network support, fiber optic splicing, MikroTik configuration, and end-to-end connectivity from router to OLT to ONU. 
+          I also work with Radius Manager, customer billing, and technical troubleshooting.
+        </p>
+        <p class="text-white/80 leading-relaxed">
+          Beyond telecom, I am passionate about web development — creating responsive websites, WordPress & Blogspot customizations, 
+          eCommerce solutions, and landing pages using HTML, CSS, JavaScript, and Tailwind CSS. I run <span class="text-[#008BF5] font-medium">Roja Shop</span> 
+          (an online store for Fruits, Honey & Dried Fish), manage <span class="text-[#008BF5] font-medium">DocBD.org</span> (a doctor listing platform), 
+          and create tech content on Facebook & YouTube. I integrate Google Forms, Telegram Bots, and WhatsApp to build smart digital experiences.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 reveal">
+        <div class="glass p-5 text-center hover:border-[#008BF5]/50 transition">
+          <i class="fas fa-tower-cell text-3xl text-[#008BF5] mb-3"></i>
+          <h4 class="font-semibold text-white">Telecom Power</h4>
+          <p class="text-white/50 text-sm">Rectifier, Battery, MDB, FCU</p>
+        </div>
+        <div class="glass p-5 text-center hover:border-[#008BF5]/50 transition">
+          <i class="fas fa-network-wired text-3xl text-[#008BF5] mb-3"></i>
+          <h4 class="font-semibold text-white">NTTN & ISP Network</h4>
+          <p class="text-white/50 text-sm">Fiber, MikroTik, OLT/ONU</p>
+        </div>
+        <div class="glass p-5 text-center hover:border-[#008BF5]/50 transition">
+          <i class="fas fa-code text-3xl text-[#008BF5] mb-3"></i>
+          <h4 class="font-semibold text-white">Web Development</h4>
+          <p class="text-white/50 text-sm">HTML, CSS, JS, Tailwind</p>
+        </div>
+        <div class="glass p-5 text-center hover:border-[#008BF5]/50 transition">
+          <i class="fas fa-cart-shopping text-3xl text-[#008BF5] mb-3"></i>
+          <h4 class="font-semibold text-white">eCommerce</h4>
+          <p class="text-white/50 text-sm">🍎 Fruits 🍯 Honey 🐟 Dried Fish</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE TIMELINE ==================== -->
+  <section id="experience" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional <span class="text-[#008BF5]">Experience</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Telecom Technical / Power -->
+      <div class="timeline-item reveal">
+        <h3 class="text-xl font-bold text-white">Telecommunication Technical / Power Department</h3>
+        <p class="text-[#008BF5] text-sm font-medium mb-2">Field & Infrastructure Support</p>
+        <ul class="text-white/70 text-sm space-y-1 list-disc list-inside">
+          <li>Telecom site installation and maintenance</li>
+          <li>Power system troubleshooting, MDB & FCU maintenance</li>
+          <li>Generator support, rectifier installation/replacement</li>
+          <li>Battery maintenance and replacement</li>
+          <li>Telecom cabinet maintenance, RMS / Smart Lock support</li>
+          <li>New site installation, site swap and dismantling</li>
+          <li>Emergency/on-call technical support & troubleshooting</li>
+        </ul>
+      </div>
+
+      <!-- NTTN & ISP / Network -->
+      <div class="timeline-item reveal">
+        <h3 class="text-xl font-bold text-white">NTTN & ISP / Network Experience</h3>
+        <p class="text-[#008BF5] text-sm font-medium mb-2">DWDM, POP, Fiber & Network Operations</p>
+        <ul class="text-white/70 text-sm space-y-1 list-disc list-inside">
+          <li>Fiber optic cable splicing & maintenance</li>
+          <li>MikroTik router configuration/support</li>
+          <li>Router to OLT, OLT to ONU, ONU to router connectivity</li>
+          <li>Radius Manager, customer billing & technical support</li>
+          <li>Internet/network troubleshooting</li>
+        </ul>
+      </div>
+
+      <!-- Web Development -->
+      <div class="timeline-item reveal">
+        <h3 class="text-xl font-bold text-white">Web Development & Digital Work</h3>
+        <p class="text-[#008BF5] text-sm font-medium mb-2">Frontend, eCommerce & Integration</p>
+        <ul class="text-white/70 text-sm space-y-1 list-disc list-inside">
+          <li>HTML, CSS, JavaScript, Tailwind CSS</li>
+          <li>WordPress & Blogspot customization, responsive website design</li>
+          <li><strong class="text-white">Roja Shop</strong> – eCommerce website (Fruits, Honey, Dried Fish)</li>
+          <li><strong class="text-white">DocBD.org</strong> – Doctor listing directory management</li>
+          <li>Product landing pages, Google Forms integration</li>
+          <li>Telegram Bot integration, WhatsApp integration</li>
+          <li>API-based form notification systems</li>
+          <li>Digital content creation on Facebook & YouTube</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technical <span class="text-[#008BF5]">Skills</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Telecom -->
+      <div class="glass p-6 reveal">
+        <h3 class="text-lg font-bold text-[#008BF5] mb-4"><i class="fas fa-tower-cell mr-2"></i>Telecom</h3>
+        <div class="space-y-3">
+          <div><span class="text-white/80 text-sm">Telecom Power</span><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Site Maintenance</span><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Rectifier / Battery</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Generator / MDB / FCU</span><div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div></div>
+          <div><span class="text-white/80 text-sm">RMS / Smart Lock</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="glass p-6 reveal">
+        <h3 class="text-lg font-bold text-[#008BF5] mb-4"><i class="fas fa-network-wired mr-2"></i>Networking</h3>
+        <div class="space-y-3">
+          <div><span class="text-white/80 text-sm">Fiber Optic / Splicing</span><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+          <div><span class="text-white/80 text-sm">MikroTik</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+          <div><span class="text-white/80 text-sm">OLT / ONU</span><div class="skill-bar"><div class="skill-bar-fill" data-width="84%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Radius Manager</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Network Troubleshooting</span><div class="skill-bar"><div class="skill-bar-fill" data-width="86%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Web Development -->
+      <div class="glass p-6 reveal">
+        <h3 class="text-lg font-bold text-[#008BF5] mb-4"><i class="fas fa-code mr-2"></i>Web Dev</h3>
+        <div class="space-y-3">
+          <div><span class="text-white/80 text-sm">HTML5 / CSS3</span><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+          <div><span class="text-white/80 text-sm">JavaScript</span><div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Tailwind CSS</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+          <div><span class="text-white/80 text-sm">WordPress / Blogspot</span><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+          <div><span class="text-white/80 text-sm">eCommerce (Roja Shop)</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="glass p-6 reveal">
+        <h3 class="text-lg font-bold text-[#008BF5] mb-4"><i class="fas fa-tools mr-2"></i>Tools</h3>
+        <div class="space-y-3">
+          <div><span class="text-white/80 text-sm">Google Forms / Apps Script</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Telegram Bot API</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+          <div><span class="text-white/80 text-sm">WhatsApp Integration</span><div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Font Awesome / Maps</span><div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div></div>
+          <div><span class="text-white/80 text-sm">Content Creation / YouTube</span><div class="skill-bar"><div class="skill-bar-fill" data-width="78%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">My <span class="text-[#008BF5]">Services</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-screwdriver-wrench text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Telecom Technical Support</h3>
+        <p class="text-white/60 text-sm mt-2">On-site maintenance, troubleshooting, and emergency support for telecom infrastructure.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-bolt text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Telecom Power Maintenance</h3>
+        <p class="text-white/60 text-sm mt-2">Rectifier, battery, generator, MDB, FCU maintenance and power system optimization.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-globe text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">NTTN & ISP Network Support</h3>
+        <p class="text-white/60 text-sm mt-2">MikroTik, OLT/ONU, Radius Manager, billing, and internet troubleshooting.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-circle-nodes text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Fiber Optic Support</h3>
+        <p class="text-white/60 text-sm mt-2">Fiber splicing, connectivity, and network restoration for ISPs.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-laptop-code text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Web Design & Development</h3>
+        <p class="text-white/60 text-sm mt-2">Responsive websites using HTML, CSS, JavaScript, and Tailwind CSS.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-blog text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">WordPress & Blogspot Development</h3>
+        <p class="text-white/60 text-sm mt-2">Custom WordPress/Blogspot themes, widgets, and SEO-friendly templates.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-cart-plus text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">eCommerce Website</h3>
+        <p class="text-white/60 text-sm mt-2">Product 🍎Fruits 🍯Honey 🐟Dried Fish at Roja Shop.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-rocket text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Landing Page Development</h3>
+        <p class="text-white/60 text-sm mt-2">High-converting landing pages with modern UI and integrations.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-robot text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Bot & Form Integration</h3>
+        <p class="text-white/60 text-sm mt-2">Google Forms, Telegram Bot, WhatsApp, and API notification systems.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-stethoscope text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Healthcare Directory Management</h3>
+        <p class="text-white/60 text-sm mt-2">Managing and operating DocBD.org – a doctor listing platform.</p>
+      </div>
+      <div class="glass p-6 hover:border-[#008BF5]/60 transition reveal">
+        <i class="fas fa-video text-3xl text-[#008BF5] mb-4"></i>
+        <h3 class="text-lg font-bold text-white">Digital Content Creation</h3>
+        <p class="text-white/60 text-sm mt-2">Educational and engaging tech content on Facebook & YouTube.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured <span class="text-[#008BF5]">Projects</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/RGJ3ZtcG/1782904476876.jpg" alt="Telecom site installation and maintenance" loading="lazy">
+          <div class="overlay">
+            <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Telecom</span>
+          <h3 class="text-lg font-bold text-white mt-1">Telecom Site Installation & Maintenance</h3>
+          <p class="text-white/60 text-sm mt-1">End-to-end site installation, power system troubleshooting, and preventive maintenance.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Rectifier</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Battery</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">MDB</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/p6zmNCV2/data-center-with-network-servers-yellow-cables-blinking-lights-high-connectivity-showing-modern-it-i.jpg" alt="ISP network and fiber optic setup" loading="lazy">
+          <div class="overlay">
+            <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Network</span>
+          <h3 class="text-lg font-bold text-white mt-1">NTTN, ISP Network & Fiber Setup</h3>
+          <p class="text-white/60 text-sm mt-1">Fiber splicing, MikroTik configuration, OLT/ONU connectivity, and billing integration.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Fiber</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">MikroTik</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">OLT</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/QFnxMVdz/screencapture-rojashopbd-blogspot-2026-10-14-00-30-12-0.png" alt="eCommerce website development" loading="lazy">
+          <div class="overlay">
+            <a href="https://rojashopbd.blogspot.com/" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">eCommerce</span>
+          <h3 class="text-lg font-bold text-white mt-1">eCommerce Website</h3>
+          <p class="text-white/60 text-sm mt-1">Responsive online store with product Food and order integration. (Roja Shop)</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">🍎 Fruits</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">🍯 Honey</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">🐟 Dried Fish</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/N6FsdT54/1website-design-development-languages-on-laptop2.png" alt="Blogger website customization" loading="lazy">
+          <div class="overlay">
+            <a href="https://wa.me/+8801949229055" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Website</span>
+          <h3 class="text-lg font-bold text-white mt-1">Website Design & Development</h3>
+          <p class="text-white/60 text-sm mt-1">Custom WordPress & Blogspot theme with responsive design, SEO, and fast loading.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">HTML</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">CSS</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">JavaScript</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">WordPress</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Blogspot</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/mFCmVc42/screencapture-rojashopbd-blogspot-2026-10-14-00-30-12-0.png" alt="Product landing page development" loading="lazy">
+          <div class="overlay">
+            <a href="https://rojashopbd.blogspot.com/" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Landing Page</span>
+          <h3 class="text-lg font-bold text-white mt-1">Product Landing Page</h3>
+          <p class="text-white/60 text-sm mt-1">High-converting landing page with Telegram bot and WhatsApp notifications.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Telegram</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">WhatsApp</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">API</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 6 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/JFsh1brH/Create-a-Telegram-Bot-1.png" alt="Digital form and bot integration" loading="lazy">
+          <div class="overlay">
+            <a href="https://wa.me/+8801949229055" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Integration</span>
+          <h3 class="text-lg font-bold text-white mt-1">Digital Form & Bot Integration</h3>
+          <p class="text-white/60 text-sm mt-1">Google Forms + Apps Script + Telegram Bot for instant notifications.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Apps Script</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Telegram</span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Google Forms</span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 7 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/ch8nPhLq/ripon-portfolio-poster-2.png" alt="Digital Content Creator" loading="lazy">
+          <div class="overlay">
+            <a href="https://www.facebook.com/ripsk55" target="_blank" class="btn-primary text-sm">Facebook</a>
+            <a href="https://www.youtube.com/riponsk55" target="_blank" class="btn-primary text-sm">YouTube</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Content Creation</span>
+          <h3 class="text-lg font-bold text-white mt-1">Digital Content Creator</h3>
+          <p class="text-white/60 text-sm mt-1">Creating educational and engaging tech videos on Facebook and YouTube.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full"><a href="https://www.facebook.com/ripsk55" target="_blank" class="text-white">Facebook</a></span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full"><a href="https://www.youtube.com/riponsk55" target="_blank" class="text-white">YouTube</a></span>
+          </div>
+        </div>
+      </div>
+      <!-- Project 8 -->
+      <div class="glass overflow-hidden group reveal">
+        <div class="project-image-container">
+          <img src="https://i.ibb.co.com/0RW4TxD2/screencapture-docbd-org-2026-10-14-01-31-18.png" alt="Doctor Listing Directory" loading="lazy">
+          <div class="overlay">
+            <a href="https://docbd.org/" target="_blank" class="btn-primary text-sm">View Project</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="text-xs font-semibold text-[#008BF5] uppercase tracking-wider">Healthcare Portal</span>
+          <h3 class="text-lg font-bold text-white mt-1">DocBD.org - Doctor Listing Website</h3>
+          <p class="text-white/60 text-sm mt-1">Managing and operating a comprehensive online doctor directory platform.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full"><a href="https://docbd.org/portal/wp-login.php/" target="_blank" class="text-white">Web Management</a></span>
+            <span class="text-xs bg-white/10 px-2 py-1 rounded-full"><a href="https://docbd.org/" target="_blank" class="text-white">DocBD.org</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATISTICS ==================== -->
+  <section class="py-16 px-6 max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="glass p-6 reveal">
+        <div class="stat-number" data-target="9">0</div>
+        <p class="text-white/60 text-sm mt-1">Years Technical Experience</p>
+      </div>
+      <div class="glass p-6 reveal">
+        <div class="stat-number" data-target="30">0</div>
+        <p class="text-white/60 text-sm mt-1">Telecom Projects</p>
+      </div>
+      <div class="glass p-6 reveal">
+        <div class="stat-number" data-target="15">0</div>
+        <p class="text-white/60 text-sm mt-1">Web Projects</p>
+      </div>
+      <div class="glass p-6 reveal">
+        <div class="stat-number" data-target="16">0</div>
+        <p class="text-white/60 text-sm mt-1">Technologies</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TECHNOLOGY STACK ==================== -->
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technology <span class="text-[#008BF5]">Stack</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 reveal">
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-html5 text-[#E34F26]"></i> HTML5</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-css3-alt text-[#1572B6]"></i> CSS3</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-js text-[#F7DF1E]"></i> JavaScript</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-wind text-[#38BDF8]"></i> Tailwind CSS</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-wordpress text-[#21759B]"></i> WordPress</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-blogger text-[#FF5722]"></i> Blogger</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-file-code text-[#0F9D58]"></i> Apps Script</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-telegram text-[#0088CC]"></i> Telegram Bot</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-wpforms text-[#7248B9]"></i> Google Forms</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-map-marked-alt text-[#4285F4]"></i> Google Maps</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-router text-[#008BF5]"></i> MikroTik</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-circle-nodes text-[#008BF5]"></i> Fiber Optic</span>
+      <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fas fa-server text-[#008BF5]"></i> OLT / ONU</span>
+      <a href="https://www.facebook.com/ripsk55" target="_blank" class="glass px-5 py-3 flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+        <i class="fab fa-facebook text-[#008BF5]"></i> Facebook
+      </a>
+      <a href="https://www.youtube.com/riponsk55" target="_blank" class="glass px-5 py-3 flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+        <i class="fab fa-youtube text-[#008BF5]"></i> YouTube
+      </a>
+      <a href="https://docbd.org/" target="_blank" class="glass px-5 py-3 flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+        <i class="fas fa-globe text-[#008BF5]"></i> DocBD.org
+      </a>
+      <a href="https://rojashopbd.blogspot.com/" target="_blank" class="glass px-5 py-3 flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+        <i class="fas fa-store text-[#008BF5]"></i> Roja Shop
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Get In <span class="text-[#008BF5]">Touch</span></h2>
+      <div class="w-20 h-1 bg-[#008BF5] mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Contact info -->
+      <div class="glass p-8 reveal">
+        <h3 class="text-xl font-bold text-white mb-6">Contact Information</h3>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-phone-alt text-[#008BF5] mt-1"></i>
+            <div><p class="text-white/60 text-sm">Phone</p><a href="tel:+8801949229055" class="text-white hover:text-[#008BF5] transition">+880 1949 229055</a></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-envelope text-[#008BF5] mt-1"></i>
+            <div><p class="text-white/60 text-sm">Email</p><a href="mailto:raphaelripon@gmail.com" class="text-white hover:text-[#008BF5] transition">raphaelripon@gmail.com</a></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-map-marker-alt text-[#008BF5] mt-1"></i>
+            <div><p class="text-white/60 text-sm">Location</p><p class="text-white">408/04, Ranjitpur, Khanpur-9300, Bagerhat Sadar, Bagerhat, Khulna, Bangladesh</p></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="fab fa-linkedin text-[#008BF5] mt-1"></i>
+            <div><p class="text-white/60 text-sm">LinkedIn</p><a href="https://www.linkedin.com/in/riponsk55/" target="_blank" rel="noopener" class="text-white hover:text-[#008BF5] transition">linkedin.com/in/riponsk55</a></div>
+          </div>
+        </div>
+        <!-- Action buttons -->
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="https://wa.me/+8801949229055" target="_blank" rel="noopener" class="btn-primary text-sm inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="tel:+8801949229055" class="btn-outline text-sm inline-flex items-center gap-2"><i class="fas fa-phone"></i> Call</a>
+          <a href="mailto:raphaelripon@gmail.com" class="btn-outline text-sm inline-flex items-center gap-2"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" rel="noopener" class="btn-outline text-sm inline-flex items-center gap-2"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="glass p-8 reveal">
+        <h3 class="text-xl font-bold text-white mb-6">Send a Message</h3>
+        <form id="contactForm" class="space-y-5">
+          <!-- Honeypot anti-spam field: left blank by humans, filled in by bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div>
+            <label for="name" class="text-white/70 text-sm block mb-1">Your Name</label>
+            <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#008BF5] transition" placeholder="Enter your name">
+          </div>
+          <div>
+            <label for="phone" class="text-white/70 text-sm block mb-1">Phone</label>
+            <input type="tel" id="phone" name="phone" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#008BF5] transition" placeholder="+880 1XXX XXXXXX">
+          </div>
+          <div>
+            <label for="email" class="text-white/70 text-sm block mb-1">Email</label>
+            <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#008BF5] transition" placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="message" class="text-white/70 text-sm block mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#008BF5] transition" placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="btn-primary w-full flex items-center justify-center gap-2">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GOOGLE MAP ==================== -->
+  <section class="py-10 px-6 max-w-7xl mx-auto reveal">
+    <div class="glass overflow-hidden rounded-3xl p-1">
+      <iframe id="googleMap" src="" width="100%" height="300" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location Map"></iframe>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-10 px-6 border-t border-white/10 mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-white">Md Ripon <span class="text-[#008BF5]">Shaikh</span></h3>
+        <p class="text-white/50 text-sm">Telecommunication Engineer | IT & Web Professional</p>
+      </div>
+      <div class="flex gap-5 text-xl">
+        <a href="https://web.facebook.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 hover:text-[#008BF5] transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 hover:text-[#008BF5] transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 hover:text-[#008BF5] transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" rel="noopener" class="text-white/60 hover:text-[#008BF5] transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p id="copyright" class="text-white/40 text-sm"></p>
+    </div>
+  </footer>
+
+  <!-- ==================== CENTRALIZED CONFIG & SCRIPT ==================== -->
+  <script>
+    // ============================================================
+    //  CONFIG OBJECT – EDIT ALL PERSONAL DATA HERE
+    // ============================================================
+    const CONFIG = {
+      name: "Md Ripon Shaikh",
+      title: "Telecommunication Engineer & IT/Web Professional",
+      phone: "+8801949229055",
+      email: "raphaelripon@gmail.com",
+      location: "Bagerhat Sadar, Bagerhat, Khulna, Bangladesh",
+      profileImage: "https://i.ibb.co.com/zVh3BqCc/Profile-Picture-2026.jpg", // ← REPLACE with your photo URL
+      linkedin: "https://www.linkedin.com/in/riponsk55/",
+      facebook: "https://web.facebook.com/riponsk55",
+      youtube: "https://www.youtube.com/riponsk55",
+      instagram: "https://www.instagram.com/riponsk55",
+      whatsappNumber: "+8801949229055", // e.g. 8801949229055
+      googleFormURL: "YOUR_GOOGLE_FORM_URL",
+      googleScriptURL: "YOUR_GOOGLE_SCRIPT_URL",
+      telegramBotToken: "YOUR_TELEGRAM_BOT_TOKEN",
+      telegramChatID: "YOUR_TELEGRAM_CHAT_ID",
+      mapLocation: "Bagerhat Sadar, Bagerhat, Khulna, Bangladesh",
+      resumeURL: "YOUR_RESUME_PDF_URL" // ← REPLACE with a direct link to your CV/resume PDF
+    };
+
+    // ============================================================
+    //  APPLY CONFIG TO DOM
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function() {
+      // Profile image
+      document.getElementById('profileImageDisplay').src = CONFIG.profileImage;
+
+      // Google Map embed
+      const mapIframe = document.getElementById('googleMap');
+      if (mapIframe) {
+        mapIframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(CONFIG.mapLocation)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+      }
+
+      // Copyright
+      const copyrightEl = document.getElementById('copyright');
+      if (copyrightEl) {
+        copyrightEl.textContent = `© ${new Date().getFullYear()} ${CONFIG.name}. All rights reserved.`;
+      }
+
+      // Update WhatsApp link
+      const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+      waLinks.forEach(link => {
+        if (CONFIG.whatsappNumber && CONFIG.whatsappNumber !== "YOUR_WHATSAPP_NUMBER") {
+          link.href = `https://wa.me/${CONFIG.whatsappNumber}`;
+        }
+      });
+
+      // Resume / CV download button
+      const resumeBtn = document.getElementById('resumeDownloadBtn');
+      if (resumeBtn) {
+        if (CONFIG.resumeURL && CONFIG.resumeURL !== "YOUR_RESUME_PDF_URL") {
+          resumeBtn.href = CONFIG.resumeURL;
+        } else {
+          // Hide the button until a real resume URL is configured
+          resumeBtn.classList.add('hidden');
+        }
+      }
+
+      // Dev warning: contact form has no real backend configured yet
+      const scriptNotSet = !CONFIG.googleScriptURL || CONFIG.googleScriptURL === "YOUR_GOOGLE_SCRIPT_URL";
+      const telegramNotSet = !CONFIG.telegramBotToken || CONFIG.telegramBotToken === "YOUR_TELEGRAM_BOT_TOKEN";
+      if (scriptNotSet && telegramNotSet) {
+        console.warn('[Portfolio Config] Neither googleScriptURL nor Telegram bot credentials are set. ' +
+          'Contact form submissions will only open WhatsApp and will NOT be emailed or logged anywhere. ' +
+          'Set CONFIG.googleScriptURL (Apps Script Web App) or CONFIG.telegramBotToken/telegramChatID to receive messages.');
+      }
+    });
+
+    // ============================================================
+    //  TYPING ANIMATION
+    // ============================================================
+    const typingText = document.getElementById('typing-text');
+    const titles = [
+      "Telecommunication Engineer",
+      "IT & Web Developer",
+      "eCommerce Creator",
+      "NTTN & ISP / Network Support"
+    ];
+    let titleIndex = 0, charIndex = 0, isDeleting = false;
+    function typeEffect() {
+      const current = titles[titleIndex];
+      if (isDeleting) {
+        typingText.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) { isDeleting = false; titleIndex = (titleIndex + 1) % titles.length; charIndex = 0; }
+      } else {
+        typingText.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) { isDeleting = true; setTimeout(typeEffect, 1500); return; }
+      }
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+    typeEffect();
+
+    // ============================================================
+    //  PARTICLES CANVAS (lightweight)
+    // ============================================================
+    const canvas = document.getElementById('particles-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [];
+      function initParticles() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+        particles = [];
+        for (let i = 0; i < 60; i++) {
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: Math.random() * 2 + 1,
+            dx: (Math.random() - 0.5) * 0.4,
+            dy: (Math.random() - 0.5) * 0.4,
+            alpha: Math.random() * 0.5 + 0.1
+          });
+        }
+      }
+      function drawParticles() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 139, 245, ${p.alpha})`;
+          ctx.fill();
+          p.x += p.dx; p.y += p.dy;
+          if (p.x < 0 || p.x > w) p.dx *= -1;
+          if (p.y < 0 || p.y > h) p.dy *= -1;
+        });
+        requestAnimationFrame(drawParticles);
+      }
+      window.addEventListener('resize', initParticles);
+      initParticles();
+      drawParticles();
+    }
+
+    // ============================================================
+    //  SCROLL REVEAL
+    // ============================================================
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Animate skill bars inside
+          const bars = entry.target.querySelectorAll('.skill-bar-fill');
+          bars.forEach(bar => {
+            if (!bar.dataset.animated) {
+              bar.style.width = bar.dataset.width || '80%';
+              bar.dataset.animated = 'true';
+            }
+          });
+        }
+      });
+    }, { threshold: 0.15 });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ============================================================
+    //  COUNTER ANIMATION
+    // ============================================================
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          const target = parseInt(entry.target.dataset.target);
+          let count = 0;
+          const step = Math.ceil(target / 40);
+          const update = () => {
+            count += step;
+            if (count >= target) { entry.target.textContent = target + '+'; return; }
+            entry.target.textContent = count;
+            requestAnimationFrame(update);
+          };
+          update();
+          entry.target.dataset.counted = 'true';
+        }
+      });
+    }, { threshold: 0.5 });
+    statNumbers.forEach(el => counterObserver.observe(el));
+
+    // ============================================================
+    //  SCROLLSPY – highlight active nav link based on visible section
+    // ============================================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+    const scrollspyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.section === id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(sec => scrollspyObserver.observe(sec));
+
+    // ============================================================
+    //  BACK TO TOP BUTTON
+    // ============================================================
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        backToTopBtn.classList.toggle('show', window.scrollY > 500);
+      });
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // ============================================================
+    //  MOBILE MENU TOGGLE
+    // ============================================================
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        const icon = menuBtn.querySelector('i');
+        if (icon) icon.classList.toggle('fa-times');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          const icon = menuBtn.querySelector('i');
+          if (icon) icon.classList.remove('fa-times');
+        });
+      });
+    }
+
+    // ============================================================
+    //  CONTACT FORM SUBMISSION + INTEGRATIONS
+    // ============================================================
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successToast = document.getElementById('successToast');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Honeypot spam check – if this hidden field was filled, silently drop the submission
+        const honeypot = document.getElementById('website');
+        if (honeypot && honeypot.value.trim() !== '') {
+          console.warn('Spam submission blocked by honeypot.');
+          contactForm.reset();
+          return;
+        }
+
+        // Validate
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if (!name || !phone || !email || !message) {
+          alert('Please fill in all fields.');
+          return;
+        }
+
+        // Loading state
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Build payload
+        const payload = {
+          name, phone, email, message,
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          // 1. Google Form / Apps Script (if configured)
+          if (CONFIG.googleScriptURL && CONFIG.googleScriptURL !== "YOUR_GOOGLE_SCRIPT_URL") {
+            await fetch(CONFIG.googleScriptURL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(() => { /* silent – no-cors may not return */ });
+          }
+
+          // 2. Telegram Bot (if configured)
+          if (CONFIG.telegramBotToken && CONFIG.telegramBotToken !== "YOUR_TELEGRAM_BOT_TOKEN" &&
+              CONFIG.telegramChatID && CONFIG.telegramChatID !== "YOUR_TELEGRAM_CHAT_ID") {
+            const tgMsg = `📬 New Contact%0A👤 ${name}%0A📞 ${phone}%0A📧 ${email}%0A📝 ${message}`;
+            await fetch(`https://api.telegram.org/bot${CONFIG.telegramBotToken}/sendMessage?chat_id=${CONFIG.telegramChatID}&text=${tgMsg}`)
+              .catch(() => { /* silent */ });
+          }
+
+          // 3. WhatsApp (optional – opens in new tab if configured)
+          if (CONFIG.whatsappNumber && CONFIG.whatsappNumber !== "YOUR_WHATSAPP_NUMBER") {
+            const waText = `Name: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`;
+            window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${waText}`, '_blank');
+          }
+
+          // Success
+          successToast.classList.add('show');
+          setTimeout(() => successToast.classList.remove('show'), 4000);
+          contactForm.reset();
+
+        } catch (err) {
+          console.error('Submission error:', err);
+          alert('There was an issue sending your message. Please try again.');
+        } finally {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // ============================================================
+    //  PARALLAX EFFECT (subtle)
+    // ============================================================
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
+      }
+    });
+
+    console.log('Portfolio ready – Md Ripon Shaikh');
+  </script>
+</body>
+</html>
