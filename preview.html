@@ -210,6 +210,17 @@
     }
     /* Hero content z-index */
     .hero-content { position: relative; z-index: 2; }
+    /* Hero section height: reliable on mobile (uses small-viewport-height where supported) */
+    .hero-section {
+      min-height: 100vh;
+      min-height: 100svh;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: auto;
+        padding-top: 6.5rem;
+      }
+    }
     /* Cyber grid floor */
     .cyber-grid {
       position: absolute;
@@ -563,7 +574,7 @@
     /* Back to top button */
     #backToTop {
       position: fixed;
-      bottom: 100px;
+      bottom: 110px;
       right: 30px;
       width: 48px;
       height: 48px;
@@ -578,13 +589,19 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(20px);
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 9998;
     }
     #backToTop.show {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+    /* Temporarily hidden while the success toast is visible, to avoid overlap */
+    #backToTop.toast-active {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transform: translateY(20px) !important;
     }
     #backToTop:hover {
       transform: translateY(-4px);
@@ -746,7 +763,7 @@
   </nav>
 
   <!-- ==================== HERO ==================== -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <section id="home" class="relative hero-section flex items-center justify-center overflow-hidden pt-20 pb-16 md:pb-0">
     <!-- Cyber Grid Floor -->
     <div class="cyber-grid"></div>
     <!-- Particles Canvas -->
@@ -791,7 +808,7 @@
       <div class="flex justify-center reveal">
         <div class="relative profile-ring-wrap" id="tiltCard">
           <img id="profileImageDisplay" src="" alt="Md Ripon Shaikh" class="profile-img w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-          <div class="absolute -bottom-2 -right-2 bg-[#00F0FF] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg glow-border">
+          <div class="absolute bottom-4 right-0 z-10 bg-[#00F0FF] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg glow-border">
             <i class="fas fa-check-circle mr-1"></i> Telecom & IT
           </div>
         </div>
@@ -1664,7 +1681,11 @@
 
           // Success
           successToast.classList.add('show');
-          setTimeout(() => successToast.classList.remove('show'), 4000);
+          if (backToTopBtn) backToTopBtn.classList.add('toast-active');
+          setTimeout(() => {
+            successToast.classList.remove('show');
+            if (backToTopBtn) backToTopBtn.classList.remove('toast-active');
+          }, 4000);
           contactForm.reset();
 
         } catch (err) {
@@ -1678,15 +1699,18 @@
     }
 
     // ============================================================
-    //  PARALLAX EFFECT (subtle)
+    //  PARALLAX EFFECT (subtle, desktop only – disabled on mobile to
+    //  prevent the hero image from visually overlapping the About section)
     // ============================================================
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
-      }
-    });
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent && scrolled < window.innerHeight) {
+          heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
+        }
+      });
+    }
 
     // ============================================================
     //  BOOT SCREEN – short system-initializing intro
