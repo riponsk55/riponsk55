@@ -33,10 +33,10 @@
     "url": "https://www.linkedin.com/in/riponsk55/"
   }
   </script>
-  <!-- Google Fonts: Hind Siliguri (body) + Orbitron/Rajdhani (cyberpunk display) -->
+  <!-- Google Fonts: Hind Siliguri (Bangla fallback). Display font uses native San Francisco / system-UI stack. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome CDN (pinned to stable release) -->
@@ -58,9 +58,12 @@
       --bg-deep-2: #0a0518;
     }
     /* Custom CSS & animations */
-    * { font-family: 'Hind Siliguri', sans-serif; }
-    h1, h2, h3, .font-display { font-family: 'Orbitron', 'Hind Siliguri', sans-serif; }
-    .nav-link, .mobile-link { font-family: 'Rajdhani', 'Hind Siliguri', sans-serif; letter-spacing: 0.03em; }
+    :root {
+      --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Hind Siliguri", sans-serif;
+    }
+    * { font-family: var(--font-sf); }
+    h1, h2, h3, .font-display { font-family: var(--font-sf); font-weight: 700; letter-spacing: -0.01em; }
+    .nav-link, .mobile-link { font-family: var(--font-sf); font-weight: 600; letter-spacing: 0.01em; }
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg-deep);
@@ -161,7 +164,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      font-family: 'Orbitron', monospace;
+      font-family: var(--font-sf), monospace;
       color: var(--neon-cyan);
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
@@ -339,6 +342,93 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* Animated gradient heading accent (cyan -> magenta shifting) */
+    .gradient-heading {
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta), var(--neon-purple), var(--neon-cyan));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientShift 4s linear infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+    /* Animated circuit-line section divider */
+    .section-divider {
+      position: relative;
+      width: 90px;
+      height: 3px;
+      margin: 0.75rem auto 0;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+      border-radius: 10px;
+      overflow: visible;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 6px; height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 8px var(--neon-cyan), 0 0 14px var(--neon-magenta);
+      animation: dividerPulse 2.4s ease-in-out infinite;
+    }
+    .section-divider::before { left: 0; }
+    .section-divider::after { right: 0; animation-delay: 1.2s; }
+    @keyframes dividerPulse {
+      0%, 100% { opacity: 0.4; transform: translateY(-50%) scale(0.8); }
+      50% { opacity: 1; transform: translateY(-50%) scale(1.3); }
+    }
+    /* Glowing icon badge (wraps service/skill icons) */
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,240,255,0.12), rgba(255,0,229,0.08));
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .icon-badge:hover, .glass:hover .icon-badge {
+      box-shadow: 0 0 26px rgba(255, 0, 229, 0.5), 0 0 10px rgba(0, 240, 255, 0.4);
+      transform: scale(1.08) rotate(-4deg);
+    }
+    /* Shimmer sweep on glass card hover */
+    .glass { position: relative; overflow: hidden; }
+    .glass::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -150%;
+      width: 60%; height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.08) 45%, rgba(0,240,255,0.18) 50%, rgba(255,255,255,0.08) 55%, transparent 100%);
+      transform: skewX(-20deg);
+      transition: left 0.9s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .glass:hover::after {
+      left: 150%;
+    }
+    /* Light-sweep on primary buttons */
+    .btn-primary { position: relative; overflow: hidden; }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -75%;
+      width: 40%; height: 100%;
+      background: linear-gradient(115deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.6s ease;
+    }
+    .btn-primary:hover::before {
+      left: 130%;
+    }
     /* Timeline */
     .timeline-item {
       position: relative;
@@ -473,8 +563,8 @@
     /* Back to top button */
     #backToTop {
       position: fixed;
-      bottom: 30px;
-      left: 30px;
+      bottom: 100px;
+      right: 30px;
       width: 48px;
       height: 48px;
       border-radius: 50%;
@@ -712,8 +802,8 @@
   <!-- ==================== ABOUT ==================== -->
   <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">About <span class="text-[#00F0FF]">Me</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">About <span class="text-[#00F0FF] gradient-heading">Me</span></h2>
+      <div class="section-divider"></div>
     </div>
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="glass hud-corners neon-border-glow p-8 reveal">
@@ -760,8 +850,8 @@
   <!-- ==================== EXPERIENCE TIMELINE ==================== -->
   <section id="experience" class="py-20 px-6 max-w-5xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional <span class="text-[#00F0FF]">Experience</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional <span class="text-[#00F0FF] gradient-heading">Experience</span></h2>
+      <div class="section-divider"></div>
     </div>
 
     <div class="space-y-8">
@@ -814,8 +904,8 @@
   <!-- ==================== SKILLS ==================== -->
   <section id="skills" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technical <span class="text-[#00F0FF]">Skills</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technical <span class="text-[#00F0FF] gradient-heading">Skills</span></h2>
+      <div class="section-divider"></div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -872,62 +962,62 @@
   <!-- ==================== SERVICES ==================== -->
   <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">My <span class="text-[#00F0FF]">Services</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">My <span class="text-[#00F0FF] gradient-heading">Services</span></h2>
+      <div class="section-divider"></div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-screwdriver-wrench text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-screwdriver-wrench text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Telecom Technical Support</h3>
         <p class="text-white/60 text-sm mt-2">On-site maintenance, troubleshooting, and emergency support for telecom infrastructure.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-bolt text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-bolt text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Telecom Power Maintenance</h3>
         <p class="text-white/60 text-sm mt-2">Rectifier, battery, generator, MDB, FCU maintenance and power system optimization.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-globe text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-globe text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">NTTN & ISP Network Support</h3>
         <p class="text-white/60 text-sm mt-2">MikroTik, OLT/ONU, Radius Manager, billing, and internet troubleshooting.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-circle-nodes text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-circle-nodes text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Fiber Optic Support</h3>
         <p class="text-white/60 text-sm mt-2">Fiber splicing, connectivity, and network restoration for ISPs.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-laptop-code text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-laptop-code text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Web Design & Development</h3>
         <p class="text-white/60 text-sm mt-2">Responsive websites using HTML, CSS, JavaScript, and Tailwind CSS.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-blog text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-blog text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">WordPress & Blogspot Development</h3>
         <p class="text-white/60 text-sm mt-2">Custom WordPress/Blogspot themes, widgets, and SEO-friendly templates.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-cart-plus text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-cart-plus text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">eCommerce Website</h3>
         <p class="text-white/60 text-sm mt-2">Product 🍎Fruits 🍯Honey 🐟Dried Fish at Roja Shop.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-rocket text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-rocket text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Landing Page Development</h3>
         <p class="text-white/60 text-sm mt-2">High-converting landing pages with modern UI and integrations.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-robot text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-robot text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Bot & Form Integration</h3>
         <p class="text-white/60 text-sm mt-2">Google Forms, Telegram Bot, WhatsApp, and API notification systems.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-stethoscope text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-stethoscope text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Healthcare Directory Management</h3>
         <p class="text-white/60 text-sm mt-2">Managing and operating DocBD.org – a doctor listing platform.</p>
       </div>
       <div class="glass hud-corners neon-border-glow p-6 hover:border-[#00F0FF]/60 transition reveal">
-        <i class="fas fa-video text-3xl text-[#00F0FF] mb-4"></i>
+        <div class="icon-badge mb-4"><i class="fas fa-video text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Digital Content Creation</h3>
         <p class="text-white/60 text-sm mt-2">Educational and engaging tech content on Facebook & YouTube.</p>
       </div>
@@ -937,12 +1027,12 @@
   <!-- ==================== PROJECTS ==================== -->
   <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured <span class="text-[#00F0FF]">Projects</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured <span class="text-[#00F0FF] gradient-heading">Projects</span></h2>
+      <div class="section-divider"></div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Project 1 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/RGJ3ZtcG/1782904476876.jpg" alt="Telecom site installation and maintenance" loading="lazy">
           <div class="overlay">
@@ -961,7 +1051,7 @@
         </div>
       </div>
       <!-- Project 2 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/p6zmNCV2/data-center-with-network-servers-yellow-cables-blinking-lights-high-connectivity-showing-modern-it-i.jpg" alt="ISP network and fiber optic setup" loading="lazy">
           <div class="overlay">
@@ -980,7 +1070,7 @@
         </div>
       </div>
       <!-- Project 3 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/QFnxMVdz/screencapture-rojashopbd-blogspot-2026-10-14-00-30-12-0.png" alt="eCommerce website development" loading="lazy">
           <div class="overlay">
@@ -999,7 +1089,7 @@
         </div>
       </div>
       <!-- Project 4 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/N6FsdT54/1website-design-development-languages-on-laptop2.png" alt="Blogger website customization" loading="lazy">
           <div class="overlay">
@@ -1020,7 +1110,7 @@
         </div>
       </div>
       <!-- Project 5 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/mFCmVc42/screencapture-rojashopbd-blogspot-2026-10-14-00-30-12-0.png" alt="Product landing page development" loading="lazy">
           <div class="overlay">
@@ -1039,7 +1129,7 @@
         </div>
       </div>
       <!-- Project 6 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/JFsh1brH/Create-a-Telegram-Bot-1.png" alt="Digital form and bot integration" loading="lazy">
           <div class="overlay">
@@ -1058,7 +1148,7 @@
         </div>
       </div>
       <!-- Project 7 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/ch8nPhLq/ripon-portfolio-poster-2.png" alt="Digital Content Creator" loading="lazy">
           <div class="overlay">
@@ -1077,7 +1167,7 @@
         </div>
       </div>
       <!-- Project 8 -->
-      <div class="glass hud-corners neon-border-glow overflow-hidden group reveal">
+      <div class="glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal">
         <div class="project-image-container">
           <img src="https://i.ibb.co.com/0RW4TxD2/screencapture-docbd-org-2026-10-14-01-31-18.png" alt="Doctor Listing Directory" loading="lazy">
           <div class="overlay">
@@ -1122,8 +1212,8 @@
   <!-- ==================== TECHNOLOGY STACK ==================== -->
   <section class="py-16 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-10 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technology <span class="text-[#00F0FF]">Stack</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Technology <span class="text-[#00F0FF] gradient-heading">Stack</span></h2>
+      <div class="section-divider"></div>
     </div>
     <div class="flex flex-wrap justify-center gap-6 reveal">
       <span class="glass px-5 py-3 flex items-center gap-2 text-white/80"><i class="fab fa-html5 text-[#E34F26]"></i> HTML5</span>
@@ -1158,8 +1248,8 @@
   <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">Get In <span class="text-[#00F0FF]">Touch</span></h2>
-      <div class="w-20 h-1 bg-[#00F0FF] mx-auto mt-3 rounded-full"></div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Get In <span class="text-[#00F0FF] gradient-heading">Touch</span></h2>
+      <div class="section-divider"></div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10">
@@ -1678,6 +1768,25 @@
       });
       tiltCard.addEventListener('mouseleave', () => {
         tiltCard.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    // ============================================================
+    //  3D TILT ON PROJECT CARDS (mouse-reactive, subtle)
+    // ============================================================
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.style.transition = 'transform 0.15s ease-out';
+        card.style.transformStyle = 'preserve-3d';
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width - 0.5;
+          const py = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(900px) rotateY(${px * 6}deg) rotateX(${-py * 6}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0)';
+        });
       });
     }
 
