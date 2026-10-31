@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | Md Ripon Shaikh</title>
+  <meta name="description" content="Detailed website package info and pricing for custom website development services by Md Ripon Shaikh.">
+  <meta name="robots" content="noindex, follow">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="https://i.ibb.co.com/zVh3BqCc/Profile-Picture-2026.jpg">
+  <style>
+    :root {
+      --neon-cyan: #00F0FF;
+      --neon-magenta: #FF00E5;
+      --neon-purple: #B026FF;
+      --bg-deep: #05060f;
+      --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Hind Siliguri", sans-serif;
+    }
+    * { box-sizing: border-box; font-family: var(--font-sf); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg-deep); color: #e5e7eb; overflow-x: hidden; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; }
+    .gradient-bg { background: radial-gradient(circle at 20% 30%, #05060f 0%, #0a0518 50%, #05060f 100%); min-height: 100vh; }
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .gradient-heading {
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta), var(--neon-purple), var(--neon-cyan));
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gradientShift 4s linear infinite;
+    }
+    @keyframes gradientShift { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+    .section-divider {
+      position: relative; width: 90px; height: 3px; margin: 0.75rem auto 0;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+      border-radius: 10px;
+    }
+    .navbar {
+      backdrop-filter: blur(15px);
+      background: rgba(10, 26, 47, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00F0FF, #B026FF);
+      color: #fff; padding: 0.75rem 1.8rem; border-radius: 3rem;
+      font-weight: 600; transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 240, 255, 0.7); }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.25); padding: 0.75rem 1.8rem; border-radius: 3rem;
+      font-weight: 500; transition: all 0.3s ease; background: rgba(255, 255, 255, 0.03);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: #00F0FF; }
+    .icon-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,240,255,0.12), rgba(255,0,229,0.08));
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+    }
+    .demo-badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.12); border: 1px solid rgba(0, 240, 255, 0.4); color: #00F0FF;
+    }
+    .browser-frame {
+      display: flex; align-items: center; gap: 5px; padding: 8px 12px;
+      background: rgba(5, 6, 15, 0.92); border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1rem 1rem 0 0;
+    }
+    .b-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .b-dot.cyan { background: #00F0FF; } .b-dot.magenta { background: #FF00E5; } .b-dot.purple { background: #B026FF; }
+    .b-url {
+      margin-left: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.07); padding: 4px 14px; border-radius: 10px;
+      flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: 'Courier New', monospace;
+    }
+    .hero-img-wrap { border-radius: 0 0 1.5rem 1.5rem; overflow: hidden; }
+    .hero-img-wrap img { width: 100%; height: 340px; object-fit: cover; object-position: top; display: block; }
+    .stat-box { text-align: center; }
+    .stat-box .num { font-size: 1.8rem; font-weight: 700; color: #00F0FF; }
+    .pricing-card { position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .pricing-card:hover { transform: translateY(-6px); }
+    .pricing-card.featured {
+      border: 1px solid rgba(0, 240, 255, 0.5);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+    }
+    .pricing-card.featured .ribbon {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, #00F0FF, #B026FF);
+      color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 0.3rem 1rem; border-radius: 9999px; text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(0,240,255,0.5);
+    }
+    .price-amount { font-size: 2.4rem; font-weight: 700; }
+    .feature-check { color: #00F0FF; margin-right: 0.5rem; }
+  </style>
+</head>
+<body class="gradient-bg">
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar fixed top-0 left-0 w-full z-50 py-3 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="preview.html" class="text-2xl font-bold text-white tracking-tight">
+        <span class="text-[#00F0FF]">Md Ripon</span> Shaikh
+      </a>
+      <a href="preview.html#webdevservice" class="btn-outline text-sm"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="pt-28 pb-10 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-8">
+      <div id="heroIcon" class="icon-badge mb-4 mx-auto"></div>
+      <span id="heroBadge" class="demo-badge"></span>
+      <h1 id="heroTitle" class="text-3xl sm:text-4xl font-bold text-white mt-3">Website</h1>
+      <div class="section-divider"></div>
+      <p id="heroDesc" class="text-white/60 max-w-2xl mx-auto mt-4 text-sm sm:text-base"></p>
+    </div>
+    <div class="glass overflow-hidden">
+      <div class="browser-frame">
+        <span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span>
+        <span id="heroUrl" class="b-url"></span>
+      </div>
+      <div class="hero-img-wrap">
+        <img id="heroImage" src="" alt="">
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-8 max-w-lg mx-auto">
+      <div class="stat-box"><div class="num">150+</div><div class="text-white/50 text-xs mt-1">Projects Delivered</div></div>
+      <div class="stat-box"><div class="num">98%</div><div class="text-white/50 text-xs mt-1">Client Satisfaction</div></div>
+      <div class="stat-box"><div class="num">24/7</div><div class="text-white/50 text-xs mt-1">Support</div></div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES ==================== -->
+  <section class="py-14 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Everything Included in This <span class="text-[#00F0FF] gradient-heading">Website</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div id="featuresGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="py-14 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Choose Your <span class="text-[#00F0FF] gradient-heading">Package</span></h2>
+      <div class="section-divider"></div>
+      <p class="text-white/60 max-w-xl mx-auto mt-4 text-sm">One-time payment. Free consultation before you order. Prices may vary slightly based on custom requirements.</p>
+    </div>
+    <div id="pricingGrid" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="py-16 px-6 max-w-3xl mx-auto text-center">
+    <div class="glass p-10">
+      <h2 class="text-2xl font-bold text-white mb-3">Ready to Get Your <span id="ctaTitle" class="text-[#00F0FF]">Website</span>?</h2>
+      <p class="text-white/60 text-sm mb-6">Message me on WhatsApp with your requirements and I'll get back to you within a few hours.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a id="ctaWhatsapp" href="#" target="_blank" rel="noopener" class="btn-primary"><i class="fab fa-whatsapp"></i> Order Now on WhatsApp</a>
+        <a href="preview.html#webdevservice" class="btn-outline"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-10 px-6 border-t border-white/10 mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-white">Md Ripon <span class="text-[#00F0FF]">Shaikh</span></h3>
+        <p class="text-white/50 text-sm">Telecommunication Engineer | IT & Web Professional</p>
+      </div>
+      <div class="flex gap-5 text-xl">
+        <a href="https://web.facebook.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 transition" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/riponsk55" target="_blank" rel="noopener" class="text-white/60 transition" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/riponsk55/" target="_blank" rel="noopener" class="text-white/60 transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p id="copyright" class="text-white/40 text-sm"></p>
+    </div>
+  </footer>
+
+  <script>
+    const WHATSAPP = "https://wa.me/+8801949229055";
+    // ============================================================
+    //  SERVICE DATA — one entry per demo card (24 total)
+    // ============================================================
+    const SERVICES = {
+      "dentist": { group: "doctor", icon: "fa-tooth", badge: "🩺 Dentist", title: "Dentist Website", desc: "Complete dental practice website with online appointment booking, treatment gallery, and patient education portal.", img: "287237", tags: ["Online Booking", "Treatment Gallery", "Patient Education"] },
+      "gynecologist": { group: "doctor", icon: "fa-venus", badge: "🩺 Gynecologist", title: "Gynecologist Website", desc: "Specialized website for gynecologists with private messaging, pregnancy tracker, and health education resources.", img: "7089329", tags: ["Private Chat", "Pregnancy Guide", "Appointment Booking"] },
+      "orthopedic-surgeon": { group: "doctor", icon: "fa-bone", badge: "🩺 Orthopedic Surgeon", title: "Orthopedic Surgeon Website", desc: "Advanced website for orthopedic surgeons with recovery tracking and comprehensive physiotherapy guides.", img: "207496", tags: ["Recovery Tracker", "Exercise Guide", "Treatment Gallery"] },
+      "pediatrician": { group: "doctor", icon: "fa-child-reaching", badge: "🩺 Pediatrician", title: "Pediatrician Website", desc: "Child-friendly website for pediatricians featuring vaccine tracker, growth charts, and parenting resources.", img: "7653122", tags: ["Vaccine Tracker", "Growth Charts", "Parenting Guide"] },
+      "ophthalmologist": { group: "doctor", icon: "fa-eye", badge: "🩺 Ophthalmologist", title: "Ophthalmologist Website", desc: "Modern website for ophthalmologists featuring virtual consultation and a comprehensive service catalog.", img: "5752287", tags: ["Virtual Consultation", "Eye Care Blog", "Service Catalog"] },
+      "dermatologist": { group: "doctor", icon: "fa-hand-dots", badge: "🩺 Dermatologist", title: "Dermatologist Website", desc: "Professional website for dermatologists with before/after galleries and a skin condition library.", img: "7446660", tags: ["Before/After Gallery", "Skin Condition Library", "Appointment Booking"] },
+      "cardiologist": { group: "doctor", icon: "fa-heart-pulse", badge: "🩺 Cardiologist", title: "Cardiologist Website", desc: "Specialized website for cardiologists with heart health monitoring and treatment procedure information.", img: "5207102", tags: ["Heart Health Info", "Treatment Procedures", "Emergency Contact"] },
+      "neurologist": { group: "doctor", icon: "fa-brain", badge: "🩺 Neurologist", title: "Neurologist Website", desc: "Advanced website for neurologists featuring brain health resources and patient consultation booking.", img: "6010927", tags: ["Brain Health Resources", "Treatment Options", "Consultation Booking"] },
+      "nephrologist": { group: "doctor", icon: "fa-droplet", badge: "🩺 Nephrologist", title: "Nephrologist Website", desc: "Comprehensive website for nephrologists with kidney health information and patient management tools.", img: "4989175", tags: ["Kidney Health Info", "Treatment Plans", "Patient Management"] },
+      "ent-specialist": { group: "doctor", icon: "fa-ear-listen", badge: "🩺 ENT Specialist", title: "ENT Specialist Website", desc: "Specialized website for ENT specialists with ear, nose and throat health resources and treatment info.", img: "5206946", tags: ["ENT Health Resources", "Treatment Procedures", "Appointment Booking"] },
+      "surgeon": { group: "doctor", icon: "fa-user-doctor", badge: "🩺 Surgeon", title: "Surgeon Website", desc: "Professional website for surgeons with surgical procedures, patient testimonials, and care information.", img: "4483323", tags: ["Surgical Procedures", "Patient Testimonials", "Consultation Booking"] },
+      "medicine-specialist": { group: "doctor", icon: "fa-pills", badge: "🩺 Medicine Specialist", title: "Medicine Specialist Website", desc: "Comprehensive website for medicine specialists with patient management and digital prescription info.", img: "9155926", tags: ["Patient Tracking", "Health Records", "Appointment Booking"] },
+      "photographer": { group: "personal", icon: "fa-camera", badge: "👤 Photographer", title: "Photographer Website", desc: "A stunning visual portfolio to showcase your photography work, galleries, and booking information.", img: "15935628", tags: ["Photo Gallery", "Booking Form", "Client Testimonials"] },
+      "graphic-designer": { group: "personal", icon: "fa-palette", badge: "👤 Graphic Designer", title: "Graphic Designer Website", desc: "A creative portfolio website to display your design projects, brand work, and client case studies.", img: "12903003", tags: ["Project Showcase", "Design Portfolio", "Contact Form"] },
+      "freelancer": { group: "personal", icon: "fa-briefcase", badge: "👤 Freelancer / Consultant", title: "Freelancer / Consultant Website", desc: "A professional personal website highlighting your services, experience, and client success stories.", img: "5356222", tags: ["Service Listing", "Resume/CV", "Client Inquiries"] },
+      "writer-blogger": { group: "personal", icon: "fa-pen-nib", badge: "👤 Writer / Blogger", title: "Writer / Blogger Website", desc: "A clean blog-style website to publish articles, build an audience, and showcase published work.", img: "261662", tags: ["Blog Layout", "Article Archive", "Newsletter Signup"] },
+      "model-influencer": { group: "personal", icon: "fa-star", badge: "👤 Model / Influencer", title: "Model / Influencer Website", desc: "A stylish personal brand website with photo/video galleries and social media integration.", img: "34695305", tags: ["Media Gallery", "Social Links", "Brand Collaboration Form"] },
+      "architect": { group: "personal", icon: "fa-drafting-compass", badge: "👤 Architect / Interior Designer", title: "Architect / Interior Designer Website", desc: "A visual portfolio website showcasing architectural and interior design projects in detail.", img: "8837623", tags: ["Project Gallery", "Before/After", "Consultation Booking"] },
+      "fashion-store": { group: "ecommerce", icon: "fa-shirt", badge: "🛒 Fashion & Clothing Store", title: "Fashion & Clothing Store Website", desc: "A complete online clothing store with product catalog, size guide, cart, and checkout flow.", img: "5424922", tags: ["Product Catalog", "Cart & Checkout", "Size Guide"] },
+      "electronics-store": { group: "ecommerce", icon: "fa-laptop", badge: "🛒 Electronics Store", title: "Electronics Store Website", desc: "An online electronics shop with product specs, comparison features, and secure checkout.", img: "25809255", tags: ["Product Specs", "Cart & Checkout", "Warranty Info"] },
+      "grocery-store": { group: "ecommerce", icon: "fa-basket-shopping", badge: "🛒 Grocery / Food Store", title: "Grocery / Food Store Website", desc: "A fast, easy-to-browse grocery store website with categories, delivery info, and online ordering.", img: "33975355", tags: ["Category Browsing", "Delivery Info", "Online Ordering"], liveUrl: "https://rojashopbd.blogspot.com/" },
+      "jewelry-store": { group: "ecommerce", icon: "fa-gem", badge: "🛒 Jewelry Store", title: "Jewelry Store Website", desc: "An elegant jewelry store website with high-quality product galleries and secure checkout.", img: "20858959", tags: ["Product Gallery", "Cart & Checkout", "Certificate Info"] },
+      "beauty-store": { group: "ecommerce", icon: "fa-spa", badge: "🛒 Beauty & Cosmetics Store", title: "Beauty & Cosmetics Store Website", desc: "A vibrant online store for beauty and cosmetics products with reviews and easy checkout.", img: "3735630", tags: ["Product Reviews", "Cart & Checkout", "Ingredient Info"] },
+      "furniture-store": { group: "ecommerce", icon: "fa-couch", badge: "🛒 Furniture / Handicraft Store", title: "Furniture / Handicraft Store Website", desc: "A warm, visual online store for furniture and handicraft products with custom order options.", img: "6790093", tags: ["Product Gallery", "Custom Orders", "Cart & Checkout"] },
+    };
+
+    // ============================================================
+    //  PRICING PLANS — per group (doctor / personal / ecommerce)
+    // ============================================================
+    const PRICING = {
+      personal: {
+        extraFeatures: ["Personal Branding Design", "Mobile Responsive Layout", "Social Media Integration"],
+        plans: [
+          { name: "Basic", price: "6,000", features: ["Single-page professional website", "Mobile responsive design", "Contact form", "Free 1-month support"] },
+          { name: "Professional", price: "12,000", features: ["Everything in Basic", "Multi-section layout", "Portfolio/gallery showcase", "Basic SEO setup", "3 months support"], featured: true },
+          { name: "Enterprise", price: "20,000", features: ["Everything in Professional", "Custom design & animations", "Blog/content section", "Free domain & hosting (1st year)", "6 months priority support"] }
+        ]
+      },
+      doctor: {
+        extraFeatures: ["Online Appointment Booking", "Mobile Responsive Layout", "Patient Testimonials Section"],
+        plans: [
+          { name: "Basic", price: "8,000", features: ["Single-page clinic website", "Mobile responsive design", "Appointment contact form", "Free 1-month support"] },
+          { name: "Professional", price: "15,000", features: ["Everything in Basic", "Online appointment booking system", "Treatment/service pages", "Basic SEO setup", "3 months support"], featured: true },
+          { name: "Enterprise", price: "25,000", features: ["Everything in Professional", "Patient portal access", "Multiple chamber/location support", "Free domain & hosting (1st year)", "1 year priority support"] }
+        ]
+      },
+      ecommerce: {
+        extraFeatures: ["Shopping Cart & Checkout", "Mobile Responsive Layout", "Secure Payment Integration"],
+        plans: [
+          { name: "Basic", price: "12,000", features: ["Online store with product catalog", "Mobile responsive design", "Cash on delivery setup", "Free 1-month support"] },
+          { name: "Professional", price: "22,000", features: ["Everything in Basic", "Shopping cart & checkout", "bKash/Nagad payment integration", "Basic SEO setup", "3 months support"], featured: true },
+          { name: "Enterprise", price: "35,000", features: ["Everything in Professional", "Inventory management system", "Order tracking dashboard", "Free domain & hosting (1st year)", "1 year priority support"] }
+        ]
+      }
+    };
+
+    // ============================================================
+    //  RENDER PAGE BASED ON ?service= PARAM
+    // ============================================================
+    const groupLabels = { doctor: "Doctor / Clinic", personal: "Personal Portfolio", ecommerce: "eCommerce" };
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('service') || 'dentist';
+    const data = SERVICES[slug] || SERVICES['dentist'];
+    const pricing = PRICING[data.group];
+
+    document.title = data.title + " | Md Ripon Shaikh";
+    document.getElementById('heroIcon').innerHTML = `<i class="fas ${data.icon} text-lg text-[#00F0FF]"></i>`;
+    document.getElementById('heroBadge').textContent = data.badge;
+    document.getElementById('heroTitle').textContent = data.title;
+    document.getElementById('heroDesc').textContent = data.desc;
+    document.getElementById('heroUrl').textContent = "ripon-demo.com/" + slug;
+    document.getElementById('heroImage').src = `https://images.pexels.com/photos/${data.img}/pexels-photo-${data.img}.jpeg?auto=compress&cs=tinysrgb&w=1000&h=500&fit=crop`;
+    document.getElementById('heroImage').alt = data.title + " preview";
+    document.getElementById('ctaTitle').textContent = data.title.replace(' Website', '');
+
+    const waMsg = encodeURIComponent(`Hi, I'm interested in ordering a ${data.title}. Please share more details.`);
+    document.getElementById('ctaWhatsapp').href = `${WHATSAPP}?text=${waMsg}`;
+
+    // Features grid: 3 category tags + 3 group-level extra features
+    const allFeatures = [...data.tags, ...pricing.extraFeatures];
+    const featuresGrid = document.getElementById('featuresGrid');
+    featuresGrid.innerHTML = allFeatures.map(f => `
+      <div class="glass p-6">
+        <div class="icon-badge mb-3"><i class="fas fa-check text-lg text-[#00F0FF]"></i></div>
+        <h3 class="text-white font-semibold">${f}</h3>
+      </div>
+    `).join('');
+
+    // Pricing grid
+    const pricingGrid = document.getElementById('pricingGrid');
+    pricingGrid.innerHTML = pricing.plans.map(p => `
+      <div class="glass pricing-card p-8 ${p.featured ? 'featured' : ''}">
+        ${p.featured ? '<span class="ribbon">Most Popular</span>' : ''}
+        <h3 class="text-white text-lg font-bold">${p.name}</h3>
+        <div class="price-amount text-white mt-2">৳${p.price}<span class="text-sm text-white/50 font-normal"> /one-time</span></div>
+        <ul class="mt-5 space-y-3 text-sm text-white/70">
+          ${p.features.map(f => `<li><i class="fas fa-check-circle feature-check"></i>${f}</li>`).join('')}
+        </ul>
+        <a href="${WHATSAPP}?text=${encodeURIComponent(`Hi, I'm interested in the ${p.name} package for a ${data.title}.`)}" target="_blank" rel="noopener" class="btn-primary w-full justify-center mt-6"><i class="fab fa-whatsapp"></i> Choose ${p.name}</a>
+      </div>
+    `).join('');
+
+    document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Md Ripon Shaikh. All rights reserved.`;
+  </script>
+</body>
+</html>
