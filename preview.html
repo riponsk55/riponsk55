@@ -410,6 +410,41 @@
       box-shadow: 0 0 26px rgba(255, 0, 229, 0.5), 0 0 10px rgba(0, 240, 255, 0.4);
       transform: scale(1.08) rotate(-4deg);
     }
+    /* Demo filter tabs (Website Development Service section) */
+    .demo-filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .demo-filter-btn:hover {
+      border-color: rgba(0, 240, 255, 0.5);
+      color: #fff;
+    }
+    .demo-filter-btn.active {
+      background: linear-gradient(135deg, #00F0FF, #B026FF);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.45);
+    }
+    .demo-card { transition: opacity 0.3s ease, transform 0.3s ease; }
+    .demo-card.demo-hidden { display: none; }
+    .demo-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.12);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      color: #00F0FF;
+    }
     /* Shimmer sweep on glass card hover */
     .glass { position: relative; overflow: hidden; }
     .glass::after {
@@ -895,6 +930,7 @@
         <a href="#experience" data-section="experience" class="nav-link text-white/80 text-sm font-medium">Experience</a>
         <a href="#skills" data-section="skills" class="nav-link text-white/80 text-sm font-medium">Skills</a>
         <a href="#services" data-section="services" class="nav-link text-white/80 text-sm font-medium">Services</a>
+        <a href="#webdevservice" data-section="webdevservice" class="nav-link text-white/80 text-sm font-medium">Web Dev Service</a>
         <a href="#projects" data-section="projects" class="nav-link text-white/80 text-sm font-medium">Projects</a>
         <a href="#contact" data-section="contact" class="nav-link text-white/80 text-sm font-medium">Contact</a>
         <button id="navResumeBtn" type="button" class="nav-resume-btn inline-flex items-center gap-2">
@@ -914,6 +950,7 @@
         <a href="#experience" data-section="experience" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Experience</a>
         <a href="#skills" data-section="skills" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Skills</a>
         <a href="#services" data-section="services" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Services</a>
+        <a href="#webdevservice" data-section="webdevservice" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Web Dev Service</a>
         <a href="#projects" data-section="projects" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Projects</a>
         <a href="#contact" data-section="contact" class="mobile-link text-white/90 hover:text-[#00F0FF] transition">Contact</a>
         <button id="navResumeBtnMobile" type="button" class="nav-resume-btn inline-flex items-center justify-center gap-2 w-full">
@@ -1220,6 +1257,81 @@
         <div class="icon-badge mb-4"><i class="fas fa-video text-xl text-[#00F0FF]"></i></div>
         <h3 class="text-lg font-bold text-white">Digital Content Creation</h3>
         <p class="text-white/60 text-sm mt-2">Educational and engaging tech content on Facebook & YouTube.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WEBSITE DEVELOPMENT SERVICE (DEMOS) ==================== -->
+  <section id="webdevservice" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-8 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Website Development <span class="text-[#00F0FF] gradient-heading">Service</span></h2>
+      <div class="section-divider"></div>
+      <p class="text-white/60 max-w-2xl mx-auto mt-4 text-sm sm:text-base">
+        Browse ready-made website designs below. I build custom, professional websites like these for doctors, personal brands, and online shops — tailored with your own content and branding.
+      </p>
+    </div>
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+      <button type="button" class="demo-filter-btn active" data-filter="all">All</button>
+      <button type="button" class="demo-filter-btn" data-filter="doctor">Doctor / Clinic</button>
+      <button type="button" class="demo-filter-btn" data-filter="personal">Personal Portfolio</button>
+      <button type="button" class="demo-filter-btn" data-filter="ecommerce">eCommerce</button>
+    </div>
+    <!-- Demo cards grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Demo 1: Doctor / Clinic -->
+      <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
+        <div class="project-image-container">
+          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Doctor+Website+Demo" alt="Doctor and clinic website demo" loading="lazy">
+          <div class="overlay">
+            <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="demo-badge">Doctor / Clinic</span>
+          <h3 class="text-lg font-bold text-white mt-2">Doctor &amp; Clinic Website</h3>
+          <p class="text-white/60 text-sm mt-1">A clean, trustworthy website design for doctors and clinics — appointment info, specialties, and patient contact details.</p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <a href="#" target="_blank" rel="noopener" class="btn-outline text-sm inline-flex items-center gap-2 border-[#00F0FF]/40"><i class="fas fa-eye"></i> Live Demo</a>
+            <a href="https://wa.me/+8801949229055" target="_blank" rel="noopener" class="btn-primary text-sm inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Order Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Demo 2: Personal Portfolio -->
+      <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
+        <div class="project-image-container">
+          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Personal+Portfolio+Demo" alt="Personal portfolio website demo" loading="lazy">
+          <div class="overlay">
+            <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="demo-badge">Personal Portfolio</span>
+          <h3 class="text-lg font-bold text-white mt-2">Personal Portfolio Website</h3>
+          <p class="text-white/60 text-sm mt-1">A modern personal portfolio design to showcase your skills, resume, and work — perfect for freelancers and professionals.</p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <a href="#" target="_blank" rel="noopener" class="btn-outline text-sm inline-flex items-center gap-2 border-[#00F0FF]/40"><i class="fas fa-eye"></i> Live Demo</a>
+            <a href="https://wa.me/+8801949229055" target="_blank" rel="noopener" class="btn-primary text-sm inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Order Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Demo 3: eCommerce -->
+      <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
+        <div class="project-image-container">
+          <img src="https://placehold.co/600x400/05060f/B026FF?text=eCommerce+Website+Demo" alt="eCommerce website demo" loading="lazy">
+          <div class="overlay">
+            <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
+          </div>
+        </div>
+        <div class="p-5">
+          <span class="demo-badge">eCommerce</span>
+          <h3 class="text-lg font-bold text-white mt-2">eCommerce / Online Shop Website</h3>
+          <p class="text-white/60 text-sm mt-1">A complete online store design with product listings, cart, and checkout flow — ready to customize for your products.</p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <a href="#" target="_blank" rel="noopener" class="btn-outline text-sm inline-flex items-center gap-2 border-[#00F0FF]/40"><i class="fas fa-eye"></i> Live Demo</a>
+            <a href="https://wa.me/+8801949229055" target="_blank" rel="noopener" class="btn-primary text-sm inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Order Now</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2056,6 +2168,23 @@
         });
       });
     }
+
+    // ============================================================
+    //  WEBSITE DEVELOPMENT SERVICE – DEMO FILTER TABS
+    // ============================================================
+    const demoFilterBtns = document.querySelectorAll('.demo-filter-btn');
+    const demoCards = document.querySelectorAll('.demo-card');
+    demoFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        demoFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        demoCards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('demo-hidden', !show);
+        });
+      });
+    });
 
     console.log('Portfolio ready – Md Ripon Shaikh (Cyberpunk Edition)');
   </script>
