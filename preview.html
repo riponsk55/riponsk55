@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -526,6 +526,45 @@
     }
     .project-image-container:hover .overlay {
       opacity: 1;
+    }
+    /* Browser frame overlay (fake address bar) */
+    .browser-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 26px;
+      background: rgba(5, 6, 15, 0.92);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 10px;
+      z-index: 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .browser-frame .b-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .browser-frame .b-dot.cyan { background: #00F0FF; }
+    .browser-frame .b-dot.magenta { background: #FF00E5; }
+    .browser-frame .b-dot.purple { background: #B026FF; }
+    .browser-frame .b-url {
+      margin-left: 6px;
+      font-size: 0.6rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.07);
+      padding: 3px 10px;
+      border-radius: 10px;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-family: 'Courier New', monospace;
     }
     /* Buttons */
     .btn-primary {
@@ -1282,7 +1321,8 @@
       <!-- 🩺 Doctor / Clinic categories -->
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Dentist%20Website%20Demo" alt="Dentist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/dentist</span></div>
+          <img src="https://images.pexels.com/photos/287237/pexels-photo-287237.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Dentist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1305,7 +1345,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Gynecologist%20Website%20Demo" alt="Gynecologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/gynecologist</span></div>
+          <img src="https://images.pexels.com/photos/7089329/pexels-photo-7089329.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Gynecologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1328,7 +1369,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Orthopedic%20Surgeon%20Website%20Demo" alt="Orthopedic Surgeon website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/orthopedic-surgeon</span></div>
+          <img src="https://images.pexels.com/photos/207496/pexels-photo-207496.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Orthopedic Surgeon website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1351,7 +1393,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Pediatrician%20Website%20Demo" alt="Pediatrician website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/pediatrician</span></div>
+          <img src="https://images.pexels.com/photos/7653122/pexels-photo-7653122.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Pediatrician website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1374,7 +1417,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Ophthalmologist%20Website%20Demo" alt="Ophthalmologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/ophthalmologist</span></div>
+          <img src="https://images.pexels.com/photos/5752287/pexels-photo-5752287.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Ophthalmologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1397,7 +1441,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Dermatologist%20Website%20Demo" alt="Dermatologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/dermatologist</span></div>
+          <img src="https://images.pexels.com/photos/7446660/pexels-photo-7446660.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Dermatologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1420,7 +1465,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Cardiologist%20Website%20Demo" alt="Cardiologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/cardiologist</span></div>
+          <img src="https://images.pexels.com/photos/5207102/pexels-photo-5207102.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Cardiologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1443,7 +1489,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Neurologist%20Website%20Demo" alt="Neurologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/neurologist</span></div>
+          <img src="https://images.pexels.com/photos/6010927/pexels-photo-6010927.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Neurologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1466,7 +1513,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Nephrologist%20Website%20Demo" alt="Nephrologist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/nephrologist</span></div>
+          <img src="https://images.pexels.com/photos/4989175/pexels-photo-4989175.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Nephrologist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1489,7 +1537,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=ENT%20Specialist%20Website%20Demo" alt="ENT Specialist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/ent-specialist</span></div>
+          <img src="https://images.pexels.com/photos/5206946/pexels-photo-5206946.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="ENT Specialist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1512,7 +1561,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Surgeon%20Website%20Demo" alt="Surgeon website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/surgeon</span></div>
+          <img src="https://images.pexels.com/photos/4483323/pexels-photo-4483323.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Surgeon website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1535,7 +1585,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="doctor">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Medicine%20Specialist%20Website%20Demo" alt="Medicine Specialist website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/medicine-specialist</span></div>
+          <img src="https://images.pexels.com/photos/9155926/pexels-photo-9155926.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Medicine Specialist website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1559,7 +1610,8 @@
       <!-- 👤 Personal Portfolio categories -->
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Photographer%20Website%20Demo" alt="Photographer website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/photographer</span></div>
+          <img src="https://images.pexels.com/photos/15935628/pexels-photo-15935628.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Photographer website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1582,7 +1634,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Graphic%20Designer%20Website%20Demo" alt="Graphic Designer website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/graphic-designer</span></div>
+          <img src="https://images.pexels.com/photos/12903003/pexels-photo-12903003.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Graphic Designer website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1605,7 +1658,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Freelancer%20%2F%20Consultant%20Website%20Demo" alt="Freelancer / Consultant website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/freelancer</span></div>
+          <img src="https://images.pexels.com/photos/5356222/pexels-photo-5356222.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Freelancer / Consultant website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1628,7 +1682,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Writer%20%2F%20Blogger%20Website%20Demo" alt="Writer / Blogger website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/writer-blogger</span></div>
+          <img src="https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Writer / Blogger website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1651,7 +1706,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Model%20%2F%20Influencer%20Website%20Demo" alt="Model / Influencer website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/model-influencer</span></div>
+          <img src="https://images.pexels.com/photos/34695305/pexels-photo-34695305.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Model / Influencer website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1674,7 +1730,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="personal">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Architect%20%2F%20Interior%20Designer%20Website%20Demo" alt="Architect / Interior Designer website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/architect</span></div>
+          <img src="https://images.pexels.com/photos/8837623/pexels-photo-8837623.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Architect / Interior Designer website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1698,7 +1755,8 @@
       <!-- 🛒 eCommerce categories -->
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Fashion%20%26%20Clothing%20Store%20Website%20Demo" alt="Fashion & Clothing Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/fashion-store</span></div>
+          <img src="https://images.pexels.com/photos/5424922/pexels-photo-5424922.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Fashion & Clothing Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1721,7 +1779,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Electronics%20Store%20Website%20Demo" alt="Electronics Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/electronics-store</span></div>
+          <img src="https://images.pexels.com/photos/25809255/pexels-photo-25809255.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Electronics Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1744,7 +1803,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Grocery%20%2F%20Food%20Store%20Website%20Demo" alt="Grocery / Food Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/grocery-store</span></div>
+          <img src="https://images.pexels.com/photos/33975355/pexels-photo-33975355.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Grocery / Food Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1767,7 +1827,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/00F0FF?text=Jewelry%20Store%20Website%20Demo" alt="Jewelry Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/jewelry-store</span></div>
+          <img src="https://images.pexels.com/photos/20858959/pexels-photo-20858959.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Jewelry Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1790,7 +1851,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/FF00E5?text=Beauty%20%26%20Cosmetics%20Store%20Website%20Demo" alt="Beauty & Cosmetics Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/beauty-store</span></div>
+          <img src="https://images.pexels.com/photos/3735630/pexels-photo-3735630.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Beauty & Cosmetics Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
@@ -1813,7 +1875,8 @@
       </div>
       <div class="demo-card glass hud-corners neon-border-glow tilt-card overflow-hidden group reveal" data-category="ecommerce">
         <div class="project-image-container">
-          <img src="https://placehold.co/600x400/05060f/B026FF?text=Furniture%20%2F%20Handicraft%20Store%20Website%20Demo" alt="Furniture / Handicraft Store website demo" loading="lazy">
+          <div class="browser-frame"><span class="b-dot cyan"></span><span class="b-dot magenta"></span><span class="b-dot purple"></span><span class="b-url">ripon-demo.com/furniture-store</span></div>
+          <img src="https://images.pexels.com/photos/6790093/pexels-photo-6790093.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Furniture / Handicraft Store website demo" loading="lazy">
           <div class="overlay">
             <a href="#" target="_blank" rel="noopener" class="btn-primary text-sm">Live Demo</a>
           </div>
