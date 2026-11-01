@@ -105,6 +105,41 @@
     }
     .price-amount { font-size: 2.4rem; font-weight: 700; }
     .feature-check { color: #00F0FF; margin-right: 0.5rem; }
+    /* Feature category cards */
+    .feat-cat-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 48px; height: 48px; border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+    .feat-cat-icon.cyan { background: rgba(0,240,255,0.12); border: 1px solid rgba(0,240,255,0.35); color: #00F0FF; }
+    .feat-cat-icon.magenta { background: rgba(255,0,229,0.12); border: 1px solid rgba(255,0,229,0.35); color: #FF00E5; }
+    .feat-cat-subtitle.cyan { color: #00F0FF; }
+    .feat-cat-subtitle.magenta { color: #FF00E5; }
+    .feat-cat-list li { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.7rem; color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+    .feat-cat-list li i { color: #00F0FF; margin-top: 3px; }
+    /* Bonus cards */
+    .bonus-section { background: rgba(255,255,255,0.03); border-radius: 2rem; border: 1px solid rgba(255,255,255,0.06); }
+    .bonus-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1rem; padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .bonus-icon {
+      width: 40px; height: 40px; border-radius: 0.75rem; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,240,255,0.12); color: #00F0FF; border: 1px solid rgba(0,240,255,0.3);
+    }
+    /* Why Choose Us cards */
+    .why-tag {
+      display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 9999px; margin-bottom: 0.6rem;
+    }
+    .why-tag.cyan { background: rgba(0,240,255,0.12); color: #00F0FF; }
+    .why-tag.magenta { background: rgba(255,0,229,0.12); color: #FF00E5; }
+    .why-tag.purple { background: rgba(176,38,255,0.15); color: #B026FF; }
+    .why-icon {
+      width: 44px; height: 44px; border-radius: 0.85rem; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.9rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    }
   </style>
 </head>
 <body class="gradient-bg">
@@ -150,6 +185,27 @@
       <div class="section-divider"></div>
     </div>
     <div id="featuresGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- ==================== BONUSES ==================== -->
+  <section class="py-14 px-6 max-w-5xl mx-auto">
+    <div class="bonus-section p-10">
+      <div class="text-center mb-8">
+        <div class="text-4xl mb-3">🎁</div>
+        <h2 class="text-2xl font-bold text-white">Free Value-Added Bonuses</h2>
+        <p class="text-white/50 text-sm mt-2">Get even more value with these complimentary additions</p>
+      </div>
+      <div id="bonusGrid" class="grid sm:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="py-14 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 id="whyHeading" class="text-2xl sm:text-3xl font-bold text-white">Why Choose <span class="text-[#00F0FF] gradient-heading">My Service</span>?</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div id="whyGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
   <!-- ==================== PRICING ==================== -->
@@ -254,6 +310,30 @@
     };
 
     // ============================================================
+    //  GROUP META — feature category labels & bonus info per group
+    // ============================================================
+    const GROUP_META = {
+      personal: {
+        niche: "portfolio",
+        featCat1: { title: "Portfolio Features", subtitle: "Showcase Your Work", icon: "fa-images", color: "cyan" },
+        featCat2: { title: "Brand Essentials", subtitle: "Build Your Personal Brand", icon: "fa-user", color: "magenta" },
+        bonusExtra: { icon: "fa-share-nodes", title: "Social Media Setup", desc: "Get your profiles connected and optimized" }
+      },
+      doctor: {
+        niche: "medical practice",
+        featCat1: { title: "Patient-Focused Features", subtitle: "Tailored for Your Practice", icon: "fa-user-doctor", color: "cyan" },
+        featCat2: { title: "Practice Essentials", subtitle: "Save Time & Resources", icon: "fa-briefcase-medical", color: "magenta" },
+        bonusExtra: { icon: "fa-hospital", title: "Healtha.io Listing", desc: "Get extra online exposure on a top directory" }
+      },
+      ecommerce: {
+        niche: "online store",
+        featCat1: { title: "Store Features", subtitle: "Convert Visitors to Buyers", icon: "fa-cart-shopping", color: "cyan" },
+        featCat2: { title: "Store Essentials", subtitle: "Grow Your Business", icon: "fa-chart-line", color: "magenta" },
+        bonusExtra: { icon: "fa-store", title: "Google Business Listing", desc: "Get found by local customers searching online" }
+      }
+    };
+
+    // ============================================================
     //  RENDER PAGE BASED ON ?service= PARAM
     // ============================================================
     const groupLabels = { doctor: "Doctor / Clinic", personal: "Personal Portfolio", ecommerce: "eCommerce" };
@@ -275,13 +355,59 @@
     const waMsg = encodeURIComponent(`Hi, I'm interested in ordering a ${data.title}. Please share more details.`);
     document.getElementById('ctaWhatsapp').href = `${WHATSAPP}?text=${waMsg}`;
 
-    // Features grid: 3 category tags + 3 group-level extra features
-    const allFeatures = [...data.tags, ...pricing.extraFeatures];
+    // Feature category cards (grouped, like reference design)
+    const meta = GROUP_META[data.group];
     const featuresGrid = document.getElementById('featuresGrid');
-    featuresGrid.innerHTML = allFeatures.map(f => `
+    function renderFeatCard(cat, items) {
+      return `
       <div class="glass p-6">
-        <div class="icon-badge mb-3"><i class="fas fa-check text-lg text-[#00F0FF]"></i></div>
-        <h3 class="text-white font-semibold">${f}</h3>
+        <div class="feat-cat-icon ${cat.color}"><i class="fas ${cat.icon} text-lg"></i></div>
+        <h3 class="text-white font-bold text-lg">${cat.title}</h3>
+        <p class="feat-cat-subtitle ${cat.color} text-sm font-medium mt-1">${cat.subtitle}</p>
+        <ul class="feat-cat-list">
+          ${items.map(f => `<li><i class="fas fa-check"></i><span>${f}</span></li>`).join('')}
+        </ul>
+      </div>`;
+    }
+    featuresGrid.innerHTML = renderFeatCard(meta.featCat1, data.tags) + renderFeatCard(meta.featCat2, pricing.extraFeatures);
+
+    // Bonus cards
+    const bonusGrid = document.getElementById('bonusGrid');
+    const bonuses = [
+      { icon: "fa-check", title: "Free Setup", desc: "No installation or hidden fees" },
+      { icon: "fa-globe", title: "Free Domain, Hosting & SSL", desc: "Secure and reliable hosting (1st year)" },
+      meta.bonusExtra
+    ];
+    bonusGrid.innerHTML = bonuses.map(b => `
+      <div class="bonus-card">
+        <div class="bonus-icon"><i class="fas ${b.icon}"></i></div>
+        <div>
+          <h4 class="text-white font-semibold text-sm">${b.title}</h4>
+          <p class="text-white/50 text-xs mt-1">${b.desc}</p>
+        </div>
+      </div>
+    `).join('');
+
+    // Why Choose Us grid (9 cards, dynamically worded for this niche)
+    const nicheShort = data.title.replace(' Website', '');
+    document.getElementById('whyHeading').innerHTML = `Why Choose <span class="text-[#00F0FF] gradient-heading">Us</span> for Your ${nicheShort}?`;
+    const whyItems = [
+      { tag: "Expertise", color: "cyan", icon: "fa-building-user", title: `${nicheShort} Website Experts in Bangladesh`, desc: `We understand the needs of a ${meta.niche} and deliver tailor-made websites built specifically for ${nicheShort.toLowerCase()} businesses.` },
+      { tag: "Free Services", color: "magenta", icon: "fa-globe", title: "Free Domain, Hosting & SSL", desc: `Get a 100% free domain, secure SSL certificate, and fast hosting for your ${nicheShort.toLowerCase()} website — all included in your package.` },
+      { tag: "Setup", color: "purple", icon: "fa-gear", title: "Free Website Installation & Setup", desc: `No technical hassle! We'll do the complete setup, installation, and optimization — absolutely free.` },
+      { tag: "Pricing", color: "cyan", icon: "fa-sack-dollar", title: "No Hidden Fees", desc: "Transparent pricing with no extra or hidden fees. What you see is what you pay — complete transparency." },
+      { tag: "Marketing", color: "magenta", icon: "fa-bullseye", title: "Google Integration", desc: "We set up Google My Business, Analytics, Search Console, and Bing Webmaster Tools to boost your local SEO." },
+      { tag: "Features", color: "purple", icon: "fa-layer-group", title: "Feature-Packed Website", desc: `Get everything you need: ${data.tags.join(', ')}, and much more.` },
+      { tag: "Social", color: "cyan", icon: "fa-share-nodes", title: "Social Media Setup", desc: "We create and optimize your Facebook, Instagram, and LinkedIn pages so your digital presence starts strong." },
+      { tag: "Bonus", color: "magenta", icon: "fa-book-open", title: "Free Marketing eBook Guide", desc: "Get a professional eBook on branding and digital marketing specifically designed for your industry." },
+      { tag: "Support", color: "purple", icon: "fa-headset", title: "6 Months Website Support", desc: "Enjoy 6 months of priority technical support for updates, changes, or anything technical." }
+    ];
+    document.getElementById('whyGrid').innerHTML = whyItems.map(w => `
+      <div class="glass p-6">
+        <span class="why-tag ${w.color}">${w.tag}</span>
+        <div class="why-icon"><i class="fas ${w.icon} text-[#00F0FF]"></i></div>
+        <h3 class="text-white font-bold mb-2">${w.title}</h3>
+        <p class="text-white/55 text-sm leading-relaxed">${w.desc}</p>
       </div>
     `).join('');
 
