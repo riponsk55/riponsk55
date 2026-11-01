@@ -113,6 +113,8 @@
     }
     .feat-cat-icon.cyan { background: rgba(0,240,255,0.12); border: 1px solid rgba(0,240,255,0.35); color: #00F0FF; }
     .feat-cat-icon.magenta { background: rgba(255,0,229,0.12); border: 1px solid rgba(255,0,229,0.35); color: #FF00E5; }
+    .feat-cat-icon.purple { background: rgba(176,38,255,0.12); border: 1px solid rgba(176,38,255,0.35); color: #B026FF; }
+    .feat-cat-subtitle.purple { color: #B026FF; }
     .feat-cat-subtitle.cyan { color: #00F0FF; }
     .feat-cat-subtitle.magenta { color: #FF00E5; }
     .feat-cat-list li { display: flex; align-items: flex-start; gap: 0.6rem; margin-top: 0.7rem; color: rgba(255,255,255,0.75); font-size: 0.9rem; }
@@ -285,6 +287,7 @@
     const PRICING = {
       personal: {
         extraFeatures: ["Personal Branding Design", "Mobile Responsive Layout", "Social Media Integration"],
+        growthFeatures: ["Basic SEO Setup", "Fast Loading Speed", "Free Domain, Hosting & SSL"],
         plans: [
           { name: "Basic", price: "6,000", features: ["Single-page professional website", "Mobile responsive design", "Contact form", "Free 1-month support"] },
           { name: "Professional", price: "12,000", features: ["Everything in Basic", "Multi-section layout", "Portfolio/gallery showcase", "Basic SEO setup", "3 months support"], featured: true },
@@ -293,6 +296,7 @@
       },
       doctor: {
         extraFeatures: ["Online Appointment Booking", "Mobile Responsive Layout", "Patient Testimonials Section"],
+        growthFeatures: ["Google My Business Setup", "Basic SEO Setup", "Free Domain, Hosting & SSL"],
         plans: [
           { name: "Basic", price: "8,000", features: ["Single-page clinic website", "Mobile responsive design", "Appointment contact form", "Free 1-month support"] },
           { name: "Professional", price: "15,000", features: ["Everything in Basic", "Online appointment booking system", "Treatment/service pages", "Basic SEO setup", "3 months support"], featured: true },
@@ -301,6 +305,7 @@
       },
       ecommerce: {
         extraFeatures: ["Shopping Cart & Checkout", "Mobile Responsive Layout", "Secure Payment Integration"],
+        growthFeatures: ["Basic SEO Setup", "Fast Loading Speed", "Free Domain, Hosting & SSL"],
         plans: [
           { name: "Basic", price: "12,000", features: ["Online store with product catalog", "Mobile responsive design", "Cash on delivery setup", "Free 1-month support"] },
           { name: "Professional", price: "22,000", features: ["Everything in Basic", "Shopping cart & checkout", "bKash/Nagad payment integration", "Basic SEO setup", "3 months support"], featured: true },
@@ -317,18 +322,21 @@
         niche: "portfolio",
         featCat1: { title: "Portfolio Features", subtitle: "Showcase Your Work", icon: "fa-images", color: "cyan" },
         featCat2: { title: "Brand Essentials", subtitle: "Build Your Personal Brand", icon: "fa-user", color: "magenta" },
+        featCat3: { title: "Growth & Support", subtitle: "Get Found & Stay Supported", icon: "fa-rocket", color: "purple" },
         bonusExtra: { icon: "fa-share-nodes", title: "Social Media Setup", desc: "Get your profiles connected and optimized" }
       },
       doctor: {
         niche: "medical practice",
         featCat1: { title: "Patient-Focused Features", subtitle: "Tailored for Your Practice", icon: "fa-user-doctor", color: "cyan" },
         featCat2: { title: "Practice Essentials", subtitle: "Save Time & Resources", icon: "fa-briefcase-medical", color: "magenta" },
+        featCat3: { title: "Growth & Support", subtitle: "Get Found & Stay Supported", icon: "fa-rocket", color: "purple" },
         bonusExtra: { icon: "fa-hospital", title: "Healtha.io Listing", desc: "Get extra online exposure on a top directory" }
       },
       ecommerce: {
         niche: "online store",
         featCat1: { title: "Store Features", subtitle: "Convert Visitors to Buyers", icon: "fa-cart-shopping", color: "cyan" },
         featCat2: { title: "Store Essentials", subtitle: "Grow Your Business", icon: "fa-chart-line", color: "magenta" },
+        featCat3: { title: "Growth & Support", subtitle: "Get Found & Stay Supported", icon: "fa-rocket", color: "purple" },
         bonusExtra: { icon: "fa-store", title: "Google Business Listing", desc: "Get found by local customers searching online" }
       }
     };
@@ -369,7 +377,7 @@
         </ul>
       </div>`;
     }
-    featuresGrid.innerHTML = renderFeatCard(meta.featCat1, data.tags) + renderFeatCard(meta.featCat2, pricing.extraFeatures);
+    featuresGrid.innerHTML = renderFeatCard(meta.featCat1, data.tags) + renderFeatCard(meta.featCat2, pricing.extraFeatures) + renderFeatCard(meta.featCat3, pricing.growthFeatures);
 
     // Bonus cards
     const bonusGrid = document.getElementById('bonusGrid');
