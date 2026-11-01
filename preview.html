@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -433,6 +433,53 @@
     }
     .demo-card { transition: opacity 0.3s ease, transform 0.3s ease; }
     .demo-card.demo-hidden { display: none; }
+    /* Website Development Service: 3 category cards + opened panel */
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.75rem;
+      border-radius: 1.25rem;
+      text-align: left;
+      cursor: pointer;
+      color: #e5e7eb;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .cat-card:hover { transform: translateY(-4px); }
+    .cat-card:focus-visible { outline: 2px solid #00F0FF; outline-offset: 3px; }
+    .cat-card.is-open { border-color: rgba(0, 240, 255, 0.75); box-shadow: 0 0 30px rgba(0, 240, 255, 0.35); }
+    .cat-icon {
+      width: 56px; height: 56px;
+      border-radius: 1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .cat-icon.cyan { background: rgba(0,240,255,0.12); border: 1px solid rgba(0,240,255,0.35); color: #00F0FF; }
+    .cat-icon.magenta { background: rgba(255,0,229,0.12); border: 1px solid rgba(255,0,229,0.35); color: #FF00E5; }
+    .cat-icon.purple { background: rgba(176,38,255,0.12); border: 1px solid rgba(176,38,255,0.35); color: #B026FF; }
+    .cat-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+    .cat-count { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em; }
+    .cat-count.cyan { color: #00F0FF; }
+    .cat-count.magenta { color: #FF00E5; }
+    .cat-count.purple { color: #B026FF; }
+    .cat-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cat-chips span {
+      font-size: 0.72rem;
+      background: rgba(255,255,255,0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      color: rgba(255,255,255,0.75);
+    }
+    .cat-cta { margin-top: auto; padding-top: 0.5rem; font-size: 0.85rem; font-weight: 600; color: #00F0FF; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .cat-cta i { transition: transform 0.3s ease; }
+    .cat-card.is-open .cat-cta i { transform: rotate(180deg); }
+    .demo-panel { scroll-margin-top: 90px; outline: none; }
+    .demo-panel-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
     .demo-badge {
       display: inline-block;
       font-size: 0.7rem;
@@ -1309,13 +1356,42 @@
         Browse ready-made website designs below. I build custom, professional websites like these for doctors, personal brands, and online shops — tailored with your own content and branding.
       </p>
     </div>
-    <!-- Filter tabs -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
-      <button type="button" class="demo-filter-btn active" data-filter="all">All</button>
-      <button type="button" class="demo-filter-btn" data-filter="doctor">🩺 Doctor / Clinic</button>
-      <button type="button" class="demo-filter-btn" data-filter="personal">👤 Personal Portfolio</button>
-      <button type="button" class="demo-filter-btn" data-filter="ecommerce">🛒 eCommerce</button>
+    <!-- Category cards (click to open the designs inside) -->
+    <div id="demoCategories" class="grid md:grid-cols-3 gap-6 mb-10">
+      <button type="button" class="cat-card glass hud-corners neon-border-glow reveal" data-filter="doctor" aria-expanded="false" aria-controls="demoPanel">
+        <span class="cat-icon cyan"><i class="fas fa-user-doctor"></i></span>
+        <span class="cat-title">🩺 Doctor / Clinic</span>
+        <span class="cat-count cyan" data-cat-count="doctor">12 website types</span>
+        <span class="cat-chips">
+          <span>Dentist</span><span>Gynecologist</span><span>Orthopedic Surgeon</span><span>Pediatrician</span><span data-cat-more="doctor">+8 more</span>
+        </span>
+        <span class="cat-cta">View designs <i class="fas fa-chevron-down"></i></span>
+      </button>
+      <button type="button" class="cat-card glass hud-corners neon-border-glow reveal" data-filter="personal" aria-expanded="false" aria-controls="demoPanel">
+        <span class="cat-icon magenta"><i class="fas fa-user"></i></span>
+        <span class="cat-title">👤 Personal Portfolio</span>
+        <span class="cat-count magenta" data-cat-count="personal">6 website types</span>
+        <span class="cat-chips">
+          <span>Photographer</span><span>Graphic Designer</span><span>Freelancer / Consultant</span><span>Writer / Blogger</span><span data-cat-more="personal">+2 more</span>
+        </span>
+        <span class="cat-cta">View designs <i class="fas fa-chevron-down"></i></span>
+      </button>
+      <button type="button" class="cat-card glass hud-corners neon-border-glow reveal" data-filter="ecommerce" aria-expanded="false" aria-controls="demoPanel">
+        <span class="cat-icon purple"><i class="fas fa-cart-shopping"></i></span>
+        <span class="cat-title">🛒 eCommerce</span>
+        <span class="cat-count purple" data-cat-count="ecommerce">6 website types</span>
+        <span class="cat-chips">
+          <span>Fashion Store</span><span>Electronics Store</span><span>Grocery / Food Store</span><span>Jewelry Store</span><span data-cat-more="ecommerce">+2 more</span>
+        </span>
+        <span class="cat-cta">View designs <i class="fas fa-chevron-down"></i></span>
+      </button>
     </div>
+    <!-- Opened category panel -->
+    <div id="demoPanel" class="demo-panel hidden" tabindex="-1">
+      <div class="demo-panel-head">
+        <h3 id="demoPanelTitle" class="text-xl sm:text-2xl font-bold text-white"></h3>
+        <button type="button" id="demoPanelClose" class="demo-filter-btn"><i class="fas fa-times mr-1"></i> Close</button>
+      </div>
     <!-- Demo cards grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- 🩺 Doctor / Clinic categories -->
@@ -1897,6 +1973,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -2734,21 +2811,55 @@
     }
 
     // ============================================================
-    //  WEBSITE DEVELOPMENT SERVICE – DEMO FILTER TABS
+    //  WEBSITE DEVELOPMENT SERVICE – 3 CATEGORY CARDS + OPENED PANEL
     // ============================================================
-    const demoFilterBtns = document.querySelectorAll('.demo-filter-btn');
+    const catCards = document.querySelectorAll('.cat-card');
     const demoCards = document.querySelectorAll('.demo-card');
-    demoFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        demoFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        demoCards.forEach(card => {
-          const show = filter === 'all' || card.dataset.category === filter;
-          card.classList.toggle('demo-hidden', !show);
-        });
+    const demoPanel = document.getElementById('demoPanel');
+    const demoPanelTitle = document.getElementById('demoPanelTitle');
+    const demoPanelClose = document.getElementById('demoPanelClose');
+    const CAT_LABELS = { doctor: '🩺 Doctor / Clinic', personal: '👤 Personal Portfolio', ecommerce: '🛒 eCommerce' };
+
+    // Fill in the real counts from the cards that exist (so the numbers never go out of date)
+    Object.keys(CAT_LABELS).forEach(cat => {
+      const total = document.querySelectorAll('.demo-card[data-category="' + cat + '"]').length;
+      const countEl = document.querySelector('[data-cat-count="' + cat + '"]');
+      if (countEl) countEl.textContent = total + ' website types';
+      const moreEl = document.querySelector('[data-cat-more="' + cat + '"]');
+      if (moreEl) {
+        const shown = moreEl.parentElement.querySelectorAll('span:not([data-cat-more])').length;
+        if (total > shown) moreEl.textContent = '+' + (total - shown) + ' more';
+        else moreEl.remove();
+      }
+    });
+
+    function openCategory(cat) {
+      catCards.forEach(c => {
+        const isActive = c.dataset.filter === cat;
+        c.classList.toggle('is-open', isActive);
+        c.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
+      demoCards.forEach(card => card.classList.toggle('demo-hidden', card.dataset.category !== cat));
+      demoPanelTitle.textContent = CAT_LABELS[cat];
+      demoPanel.classList.remove('hidden');
+      demoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function closeCategory() {
+      catCards.forEach(c => {
+        c.classList.remove('is-open');
+        c.setAttribute('aria-expanded', 'false');
+      });
+      demoPanel.classList.add('hidden');
+      const cats = document.getElementById('demoCategories');
+      if (cats) cats.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    catCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isOpen = card.classList.contains('is-open') && !demoPanel.classList.contains('hidden');
+        if (isOpen) closeCategory(); else openCategory(card.dataset.filter);
       });
     });
+    if (demoPanelClose) demoPanelClose.addEventListener('click', closeCategory);
 
     console.log('Portfolio ready – Md Ripon Shaikh (Cyberpunk Edition)');
   </script>
